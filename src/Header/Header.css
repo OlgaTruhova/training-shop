@@ -1,0 +1,50 @@
+.container-header-nav-menu {
+  width: 100%;
+}
+
+.container-header-nav-menu .header-nav-menu {
+  width: 87%;
+  height: 66px;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container-header-nav-menu .header-nav-menu .header-nav-logo {
+  font-family: 'Playfair Display SC';
+  font-size: 24px;
+  text-decoration: none;
+  font-weight: 400;
+  color: #000;
+}
+
+.container-header-nav-menu .header-nav-menu .menu, .container-header-nav-menu .header-nav-menu .menu-nav {
+  width: 53%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  list-style-type: none;
+}
+
+.container-header-nav-menu .header-nav-menu .menu .menu-item, .container-header-nav-menu .header-nav-menu .menu-nav .menu-item {
+  text-decoration: none;
+  color: #000;
+  font-family: 'Spartan';
+  font-size: 14px;
+}
+
+.container-header-nav-menu .header-nav-menu .menu-nav {
+  width: 172px;
+  cursor: pointer;
+}
+/*# sourceMappingURL=Header.css.map */
