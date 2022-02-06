@@ -8,6 +8,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+        flex-wrap: wrap;
 
         .header-nav-logo {
             font-family: 'Playfair Display SC';
@@ -22,6 +23,8 @@
             display: flex;
             justify-content: space-between;
             list-style-type: none;
+            flex-wrap: wrap;
+            margin: 5px;
 
             .menu-item {
                 text-decoration: none;
@@ -30,9 +33,30 @@
                 font-size: 14px;
             }
         }
+        @media screen and (max-width: 940px) {
+            .menu {
+                width: 100%;
+            }
+        }
+        @media screen and (max-width: 540px) {
+            .menu {
+                width: 460px;
+                flex-wrap: wrap;
+            }
+        }
         .menu-nav {
             width: 172px;
             cursor: pointer;
+        }
+    }
+    @media screen and (max-width: 940px) {
+        .header-nav-menu {
+            justify-content: center;
+        }
+    }
+    @media screen and (max-width: 540px) {
+        .header-nav-menu {
+            height: calc(100px + (66 - 100) * ((100vw - 320px) / (1300 - 320)));
         }
     }
 }
