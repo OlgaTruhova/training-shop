@@ -1,3 +1,4 @@
+import React from 'react';
 import tel from "../../assets/png/tel.png";
 import location from "../../assets/png/location.png";
 import clock from "../../assets/png/clock.png";

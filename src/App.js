@@ -1,4 +1,5 @@
-import { Route } from 'react-router-dom';
+import React from 'react';
+// import { Route } from 'react-router-dom';
 import {Header} from "./Header/Header";
 import MenPage from "./pages/MenPage/MenPage";
 
