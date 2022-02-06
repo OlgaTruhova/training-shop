@@ -1,56 +1,178 @@
 .header-part-one {
-  border: 1px solid red;
   width: 87%;
   margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  padding: 30px 10px 0 10px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 30px;
 }
 
 .header-part-one .header-banner {
   background: url(../../assets/img/header-banner.jpg) center/cover no-repeat;
   width: 540px;
+  min-width: 420px;
   height: 490px;
-  -webkit-box-flex: 4;
-      -ms-flex-positive: 4;
-          flex-grow: 4;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.header-part-one .header-banner div {
+.header-part-one .header-banner .header-circle {
+  background: #fff;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  text-align: center;
+  padding-top: 12px;
+}
+
+.header-part-one .header-banner .header-banner-text {
   background: #fff;
   width: 289px;
   height: 100px;
-  -webkit-transform: translate(50%, 50%);
-          transform: translate(50%, 50%);
+  text-align: center;
+  padding-top: 20px;
+  border-radius: 4px;
 }
 
-.header-part-one .header-women {
+.header-part-one .header-banner .header-banner-text span {
+  width: 100%;
+  display: block;
+  font-family: "Spartan";
+  font-size: 12px;
+  letter-spacing: 6%;
+  font-weight: bold;
+  opacity: 40%;
+  margin: 5px 0;
+}
+
+.header-part-one .header-banner .header-banner-text .text {
+  font-size: 22px;
+  opacity: 100%;
+}
+
+@media screen and (max-width: 450px) {
+  .header-part-one .header-banner .header-banner-text {
+    width: calc(170px + (289 - 170) * ((100vw - 320px) / (1300 - 320)));
+    height: calc(70px + (100 - 70) * ((100vw - 320px) / (1300 - 320)));
+  }
+  .header-part-one .header-banner .header-banner-text .text {
+    font-size: calc(16px + (22 - 16) * ((100vw - 320px) / (1300 - 320)));
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .header-part-one .header-banner {
+    width: calc(300px + (540 - 300) * ((100vw - 320px) / (1300 - 320)));
+    height: calc(350px + (490 - 350) * ((100vw - 320px) / (1300 - 320)));
+    min-width: 30px;
+  }
+}
+
+.header-part-one .header-group {
+  width: 50%;
+  min-width: 420px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-line-pack: justify;
+      align-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  row-gap: 15px;
+  -webkit-column-gap: 15px;
+          column-gap: 15px;
+}
+
+.header-part-one .header-group .header-women div, .header-part-one .header-group .header-accessories div, .header-part-one .header-group .header-men div {
+  background: #fff;
+  height: 48px;
+  border-radius: 4px;
+  margin: 30% auto;
+  text-align: center;
+  padding-top: 5%;
+}
+
+.header-part-one .header-group .header-women div span, .header-part-one .header-group .header-accessories div span, .header-part-one .header-group .header-men div span {
+  font-family: "Spartan";
+  font-size: 14px;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 480px) {
+  .header-part-one .header-group .header-women div, .header-part-one .header-group .header-accessories div, .header-part-one .header-group .header-men div {
+    padding-top: 10%;
+  }
+}
+
+.header-part-one .header-group .header-women {
   background: url(../../assets/img/header-women.jpg) center/cover no-repeat;
-  width: 255px;
+  width: 47%;
   height: 200px;
-  -webkit-box-flex: 2;
-      -ms-flex-positive: 2;
-          flex-grow: 2;
 }
 
-.header-part-one .header-men {
+.header-part-one .header-group .header-women div {
+  width: 118px;
+}
+
+.header-part-one .header-group .header-men {
   background: url(../../assets/img/header-men.jpg) center/cover no-repeat;
-  width: 255px;
+  width: 47%;
   height: 200px;
-  -webkit-box-flex: 2;
-      -ms-flex-positive: 2;
-          flex-grow: 2;
 }
 
-.header-part-one .header-accessories {
+.header-part-one .header-group .header-men div {
+  width: 118px;
+}
+
+.header-part-one .header-group .header-accessories {
   background: url(../../assets/img/header-accessories.jpg) center/cover no-repeat;
-  max-width: 540px;
+  width: 100%;
   height: 260px;
-  -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
+}
+
+.header-part-one .header-group .header-accessories div {
+  width: 166px;
+  margin-top: 20%;
+  padding-top: 3%;
+}
+
+@media screen and (max-width: 480px) {
+  .header-part-one .header-group .header-accessories div {
+    padding-top: 5%;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .header-part-one .header-group {
+    width: 540px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .header-part-one .header-group {
+    min-width: 30px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .header-part-one {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
 }
 /*# sourceMappingURL=PartOne.css.map */

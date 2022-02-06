@@ -12,9 +12,10 @@
         align-items: center;
 
         .top-bar_contacts, .top-bar_social-networks {
-            width: 43%;
+            width: 480px;
             display: flex;
             justify-content: space-between;
+            flex-wrap: wrap;
 
             .top-bar-tel, .top-bar-location, .top-bar-clock {
                 img {
@@ -26,15 +27,38 @@
                     font-size: 11px;
                 }
             }
-
+            @media screen and (max-width: 620px) {
+                .top-bar-tel, .top-bar-location, .top-bar-clock {
+                    width: 100%;
+                    min-width: 190px;
+                }
+            }
             .top-bar-location {
                 span {
                     font-family: 'Inter';
                 }
             }
         }
+        @media screen and (max-width: 500px) {
+            .top-bar_contacts {
+                width: calc(320px + (480 - 320) * ((100vw - 320px) / (1300 - 320)));
+                flex-wrap: wrap;
+            }
+        }
         .top-bar_social-networks {
             width: 86px;
+            min-width: 80px;
+            margin-left: 30px;
+        }
+        @media screen and (max-width: 350px) {
+            .top-bar_social-networks {
+                margin-left: calc(0px + (30 - 0) * ((100vw - 320px) / (1300 - 320)));
+            }
+        }
+    }
+    @media screen and (max-width: 768px) {
+        .top-bar {
+            height: calc(100px + (24 - 100) * ((100vw - 320px) / (1300 - 320)));
         }
     }
 }

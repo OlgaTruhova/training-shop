@@ -20,13 +20,15 @@
 }
 
 .container-top-bar .top-bar .top-bar_contacts, .container-top-bar .top-bar .top-bar_social-networks {
-  width: 43%;
+  width: 480px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .container-top-bar .top-bar .top-bar_contacts .top-bar-tel img, .container-top-bar .top-bar .top-bar_contacts .top-bar-location img, .container-top-bar .top-bar .top-bar_contacts .top-bar-clock img, .container-top-bar .top-bar .top-bar_social-networks .top-bar-tel img, .container-top-bar .top-bar .top-bar_social-networks .top-bar-location img, .container-top-bar .top-bar .top-bar_social-networks .top-bar-clock img {
@@ -39,11 +41,40 @@
   font-size: 11px;
 }
 
+@media screen and (max-width: 620px) {
+  .container-top-bar .top-bar .top-bar_contacts .top-bar-tel, .container-top-bar .top-bar .top-bar_contacts .top-bar-location, .container-top-bar .top-bar .top-bar_contacts .top-bar-clock, .container-top-bar .top-bar .top-bar_social-networks .top-bar-tel, .container-top-bar .top-bar .top-bar_social-networks .top-bar-location, .container-top-bar .top-bar .top-bar_social-networks .top-bar-clock {
+    width: 100%;
+    min-width: 190px;
+  }
+}
+
 .container-top-bar .top-bar .top-bar_contacts .top-bar-location span, .container-top-bar .top-bar .top-bar_social-networks .top-bar-location span {
   font-family: 'Inter';
 }
 
+@media screen and (max-width: 500px) {
+  .container-top-bar .top-bar .top-bar_contacts {
+    width: calc(320px + (480 - 320) * ((100vw - 320px) / (1300 - 320)));
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+}
+
 .container-top-bar .top-bar .top-bar_social-networks {
   width: 86px;
+  min-width: 80px;
+  margin-left: 30px;
+}
+
+@media screen and (max-width: 350px) {
+  .container-top-bar .top-bar .top-bar_social-networks {
+    margin-left: calc(0px + (30 - 0) * ((100vw - 320px) / (1300 - 320)));
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container-top-bar .top-bar {
+    height: calc(100px + (24 - 100) * ((100vw - 320px) / (1300 - 320)));
+  }
 }
 /*# sourceMappingURL=TopBar.css.map */
