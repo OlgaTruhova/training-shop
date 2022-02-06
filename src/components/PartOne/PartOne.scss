@@ -1,0 +1,46 @@
+.header-part-one {
+    border: 1px solid red;
+    width: 87%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    // row-gap: 20px;
+    // column-gap: 20px;
+    padding: 30px 10px 0 10px;
+
+
+    .header-banner {
+        background: url(../../assets/img/header-banner.jpg) center / cover no-repeat;
+        width: 540px;
+        height: 490px;
+        flex-grow: 4;
+        
+        div {
+            background: #fff;
+            width: 289px;
+            height: 100px;
+            transform: translate(50%, 50%);
+        }
+    }
+
+    .header-women {
+        background: url(../../assets/img/header-women.jpg) center / cover no-repeat;
+        width: 255px;
+        height: 200px;
+        flex-grow: 2;
+    }
+
+    .header-men {
+        background: url(../../assets/img/header-men.jpg) center / cover no-repeat;
+        width: 255px;
+        height: 200px;
+        flex-grow: 2;
+    }
+
+    .header-accessories {
+        background: url(../../assets/img/header-accessories.jpg) center / cover no-repeat;
+        max-width: 540px;
+        height: 260px;
+        flex-grow: 1;
+    }
+}
