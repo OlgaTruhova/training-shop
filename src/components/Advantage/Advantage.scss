@@ -1,0 +1,38 @@
+.container-advantage {
+   margin: 0 auto;
+   width: 87%;
+   height: 103px;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   
+   .free-shipping, .days-return, .support {
+       display: flex;
+
+        .img-free-shipping, .img-days-return, .img-support {
+            min-width: 30px;
+            min-height: 30px;
+            margin-right: 20px;
+            background: url("../../assets/png/car.png") center / 100% no-repeat;
+        }
+
+        .img-days-return {
+            background: url("../../assets/png/arrows-circle.png") center / 100% no-repeat;
+        }
+
+        .img-support {
+            background: url("../../assets/png/circle.png") center / 100% no-repeat;
+        }
+
+        .title-advantage, .item-advantage {
+            display: block;
+            font-family: "Spartan";
+            font-size: 12px;
+            padding: 5px 0;
+        }
+        
+        .title-advantage {
+            font-weight: bold;
+        }
+   }
+}

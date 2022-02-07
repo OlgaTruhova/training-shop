@@ -1,0 +1,47 @@
+.container-advantage {
+  margin: 0 auto;
+  width: 87%;
+  height: 103px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container-advantage .free-shipping, .container-advantage .days-return, .container-advantage .support {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.container-advantage .free-shipping .img-free-shipping, .container-advantage .free-shipping .img-days-return, .container-advantage .free-shipping .img-support, .container-advantage .days-return .img-free-shipping, .container-advantage .days-return .img-days-return, .container-advantage .days-return .img-support, .container-advantage .support .img-free-shipping, .container-advantage .support .img-days-return, .container-advantage .support .img-support {
+  min-width: 30px;
+  min-height: 30px;
+  margin-right: 20px;
+  background: url("../../assets/png/car.png") center/100% no-repeat;
+}
+
+.container-advantage .free-shipping .img-days-return, .container-advantage .days-return .img-days-return, .container-advantage .support .img-days-return {
+  background: url("../../assets/png/arrows-circle.png") center/100% no-repeat;
+}
+
+.container-advantage .free-shipping .img-support, .container-advantage .days-return .img-support, .container-advantage .support .img-support {
+  background: url("../../assets/png/circle.png") center/100% no-repeat;
+}
+
+.container-advantage .free-shipping .title-advantage, .container-advantage .free-shipping .item-advantage, .container-advantage .days-return .title-advantage, .container-advantage .days-return .item-advantage, .container-advantage .support .title-advantage, .container-advantage .support .item-advantage {
+  display: block;
+  font-family: "Spartan";
+  font-size: 12px;
+  padding: 5px 0;
+}
+
+.container-advantage .free-shipping .title-advantage, .container-advantage .days-return .title-advantage, .container-advantage .support .title-advantage {
+  font-weight: bold;
+}
+/*# sourceMappingURL=Advantage.css.map */
