@@ -2,6 +2,7 @@ import React from 'react';
 import { TopBar } from '../components/TopBar/TopBar';
 import { MENU } from '../data/MENU';
 import { PartOne } from '../components/PartOne/PartOne';
+import { Advantage } from "../components/Advantage/Advantage";
 
 import {Link} from "react-router-dom";
 
@@ -36,6 +37,7 @@ const Header = () => {
                 </nav>
             </section>
             <PartOne />
+            <Advantage />
         </div>
     )
 }

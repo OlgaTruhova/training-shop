@@ -1,20 +1,27 @@
 import React from 'react';
-// import { Route } from 'react-router-dom';
+// import { Route, Switch } from 'react-router-dom';
 import { Header } from "./Header/Header";
-import MenPage from "./pages/MenPage/MenPage";
-import { Advantage } from "./components/Advantage/Advantage";
+import { Clothes } from "./components/Сlothes/Clothes";
+import { NewSale } from "./components/NewSale/NewSale";
+import { Subscribe } from "./components/Subscribe/Subscribe";
+import { LatestFromBlog } from "./components/LatestFromBlog/LatestFromBlog";
+
+// import MenPage from "./pages/MenPage/MenPage";
+// import { useState } from 'react';
+
 
 import './App.css';
 
 function App() {
+
   return (
     <div className='app' datd-test-id='app'>
         <div className='App-wrapper'>
-            <Header />
-            <Advantage />
-            <MenPage />
-
-            {/* <Route path='/Men' component={ MenPage } exact /> */}
+            <Header /> 
+            <Clothes />  
+            <NewSale />
+            <Subscribe /> 
+            <LatestFromBlog />
         </div>
     </div>
   );

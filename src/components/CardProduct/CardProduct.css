@@ -1,0 +1,36 @@
+.wrapper-card-product {
+  width: 255px;
+  margin-top: 40px;
+}
+
+.wrapper-card-product .card-product-img img {
+  width: 100%;
+  grid-template: 318px;
+  margin-bottom: 10px;
+}
+
+.wrapper-card-product .card-product-name, .wrapper-card-product .card-product-price {
+  font-family: 'Spartan';
+  font-size: 14px;
+  opacity: 60%;
+  display: block;
+}
+
+.wrapper-card-product .card-product-price {
+  font-weight: bold;
+  opacity: 100%;
+}
+
+.wrapper-card-product .wrapper-card-product-price-starts {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 10px 0;
+}
+/*# sourceMappingURL=CardProduct.css.map */

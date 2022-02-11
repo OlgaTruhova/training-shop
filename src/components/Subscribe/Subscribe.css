@@ -1,0 +1,166 @@
+.container-subscribe {
+  width: 100%;
+  height: 580px;
+  background: -webkit-gradient(linear, left bottom, left top, from(#F3F2F2), to(#DCDBDB));
+  background: linear-gradient(to top, #F3F2F2, #DCDBDB);
+  margin-top: 90px;
+}
+
+.container-subscribe .subscribe-wrapper {
+  position: relative;
+  width: 89%;
+  height: 580px;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.container-subscribe .subscribe-wrapper .subscribe-img-woman {
+  background: url(../../assets/png/special-woman.png) center/contain no-repeat;
+  width: 27%;
+  left: 2%;
+  position: relative;
+  z-index: 5;
+}
+
+@media screen and (max-width: 850px) {
+  .container-subscribe .subscribe-wrapper .subscribe-img-woman {
+    display: none;
+  }
+}
+
+.container-subscribe .subscribe-wrapper .subscribe-form {
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+  width: 47%;
+  min-width: 300px;
+  height: 461px;
+  margin-top: 5%;
+  padding: 70px 0;
+  background: #fff;
+  border-radius: 4px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.container-subscribe .subscribe-wrapper .subscribe-form .subscribe-form_text {
+  font-family: 'Spartan';
+  font-size: 12px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.container-subscribe .subscribe-wrapper .subscribe-form .subscribe-form_text .title {
+  font-weight: bold;
+  opacity: 40%;
+}
+
+.container-subscribe .subscribe-wrapper .subscribe-form .subscribe-form_text .text {
+  font-weight: bold;
+  font-size: 26px;
+  margin-top: 20px;
+}
+
+@media screen and (max-width: 1220px) {
+  .container-subscribe .subscribe-wrapper .subscribe-form .subscribe-form_text .text {
+    margin-top: calc(10px + (20 - 10) * ((100vw - 320px) / (1300 - 320)));
+    font-size: calc(16px + (26 - 16) * ((100vw - 320px) / (1300 - 320)));
+  }
+}
+
+.container-subscribe .subscribe-wrapper .subscribe-form .subscribe-form_form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  height: 152px;
+  -ms-flex-line-pack: justify;
+      align-content: space-between;
+}
+
+.container-subscribe .subscribe-wrapper .subscribe-form .subscribe-form_form input, .container-subscribe .subscribe-wrapper .subscribe-form .subscribe-form_form button {
+  width: 64%;
+  height: 64px;
+  background: #121212;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  opacity: 90%;
+  display: block;
+}
+
+@media screen and (max-width: 1220px) {
+  .container-subscribe .subscribe-wrapper .subscribe-form .subscribe-form_form input, .container-subscribe .subscribe-wrapper .subscribe-form .subscribe-form_form button {
+    height: calc(34px + (64 - 34) * ((100vw - 320px) / (1300 - 320)));
+    font-size: calc(12px + (16 - 12) * ((100vw - 320px) / (1300 - 320)));
+  }
+}
+
+.container-subscribe .subscribe-wrapper .subscribe-form .subscribe-form_form input {
+  background: #F8F8F8;
+  text-transform: none;
+  text-align: center;
+  opacity: 40%;
+}
+
+@media screen and (max-width: 1220px) {
+  .container-subscribe .subscribe-wrapper .subscribe-form .subscribe-form_form {
+    height: calc(80px + (152 - 80) * ((100vw - 320px) / (1300 - 320)));
+  }
+}
+
+@media screen and (max-width: 1220px) {
+  .container-subscribe .subscribe-wrapper .subscribe-form {
+    height: calc(250px + (461 - 250) * ((100vw - 320px) / (1300 - 320)));
+    padding-top: calc(35px + (70 - 35) * ((100vw - 320px) / (1300 - 320)));
+    padding-bottom: calc(35px + (70 - 35) * ((100vw - 320px) / (1300 - 320)));
+  }
+}
+
+.container-subscribe .subscribe-wrapper .subscribe-img-man {
+  background: url(../../assets/png/special-man.png) center/contain no-repeat;
+  width: 20%;
+  position: relative;
+  left: 44%;
+  z-index: 5;
+}
+
+@media screen and (max-width: 850px) {
+  .container-subscribe .subscribe-wrapper .subscribe-img-man {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1220px) {
+  .container-subscribe .subscribe-wrapper {
+    height: calc(350px + (580 - 350) * ((100vw - 320px) / (1300 - 320)));
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .container-subscribe {
+    margin-top: calc(35px + (90 - 35) * ((100vw - 320px) / (1300 - 320)));
+    height: calc(350px + (580 - 350) * ((100vw - 320px) / (1300 - 320)));
+  }
+}
+/*# sourceMappingURL=Subscribe.css.map */

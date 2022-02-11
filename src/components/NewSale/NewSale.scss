@@ -1,0 +1,64 @@
+.container-new-sale {
+    width: 89%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding-top: 90px;
+
+    .new-sale_new, .new-sale_sale {
+        width: 540px;
+        height: 260px;
+        background: url(../../assets/img/new-season.jpg) center / 100% no-repeat;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+        .new, .sale {
+            width: 55%;
+            height: 71px;
+            background: #fff;
+            border-radius: 4%;
+            text-align: center;
+            
+
+            span, .text {
+                font-family: 'Spartan';
+                font-size: 12px;
+                letter-spacing: 1px;
+                opacity: 60%;
+                text-transform: uppercase;
+                font-weight: bold;
+                display: block;
+                margin-top: 4%;
+            }
+
+            .text {
+                font-size: 16px;
+                opacity: 100%;
+                display: block;
+
+            }
+            @media screen and (max-width: 630px) {
+                .text {
+                    font-size: calc(12px + (16 - 12) * ((100vw - 320px) / (1280 - 320)));
+                }
+            }
+        }
+    }
+    @media screen and (max-width: 630px) {
+        .new-sale_new, .new-sale_sale {
+            height: calc(150px + (260 - 150) * ((100vw - 320px) / (1280 - 320)));
+        }
+    }
+
+
+    .new-sale_sale {
+        background: url(../../assets/img/sale.jpg) center / 100% no-repeat;
+    }
+}
+@media screen and (max-width: 630px) {
+    .container-new-sale {
+        padding-top: calc(30px + (90 - 30) * ((100vw - 320px) / (1280 - 320)));
+    }
+}
