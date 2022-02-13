@@ -1,0 +1,14 @@
+.top-bar_social-networks {
+    width: 86px;
+    min-width: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-left: 30px;
+}
+@media screen and (max-width: 350px) {
+    .top-bar_social-networks {
+        margin-left: calc(0px + (30 - 0) * ((100vw - 320px) / (1300 - 320)));
+    }
+}

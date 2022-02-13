@@ -1,29 +1,34 @@
-.wrapper-card-product {
-    width: 255px;
-    margin-top: 40px;
+.cards-item {
+    text-decoration: none;
+    color: #000;
 
-    .card-product-img {
-        img {
-            width: 100%;
-            grid-template: 318px;
-            margin-bottom: 10px;
+    .wrapper-card-product {
+        width: 255px;
+        margin-top: 40px;
+    
+        .card-product-img {
+            img {
+                width: 100%;
+                grid-template: 318px;
+                margin-bottom: 10px;
+            }
         }
-    }
-    .card-product-name, .card-product-price {
-        font-family: 'Spartan';
-        font-size: 14px;
-        opacity: 60%;
-        display: block;
-    }
-    .card-product-price {
-        font-weight: bold;
-        opacity: 100%;
-    }
-
-    .wrapper-card-product-price-starts {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin: 10px 0;
+        .card-product-name, .card-product-price {
+            font-family: 'Spartan';
+            font-size: 14px;
+            opacity: 60%;
+            display: block;
+        }
+        .card-product-price {
+            font-weight: bold;
+            opacity: 100%;
+        }
+    
+        .wrapper-card-product-price-starts {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 10px 0;
+        }
     }
 }

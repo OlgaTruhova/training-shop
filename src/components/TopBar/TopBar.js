@@ -2,10 +2,7 @@ import React from 'react';
 import tel from "../../assets/png/tel.png";
 import location from "../../assets/png/location.png";
 import clock from "../../assets/png/clock.png";
-import facebook from "../../assets/png/facebook.png";
-import twitter from "../../assets/png/twitter.png";
-import instagram from "../../assets/png/instagram.png";
-import pinterest from "../../assets/png/pinterest.png";
+import { SocialNetworks } from "../../components/SocialNetworks/SocialNetworks";
 
 import './TopBar.css';
 
@@ -27,12 +24,7 @@ const TopBar = () => {
                         <span>All week 24/7</span>
                     </div>
                 </div>
-                <div className='top-bar_social-networks'>
-                    <a href="#"><img src={facebook} alt='img'/></a>
-                    <a href="#"><img src={twitter} alt='img'/></a>
-                    <a href="#"><img src={instagram} alt='img'/></a>
-                    <a href="#"><img src={pinterest} alt='img'/></a>
-                </div>
+                <SocialNetworks />
             </aside>
         </section>
     )

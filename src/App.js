@@ -1,29 +1,29 @@
 import React from 'react';
-// import { Route, Switch } from 'react-router-dom';
 import { Header } from "./Header/Header";
-import { Clothes } from "./components/Сlothes/Clothes";
-import { NewSale } from "./components/NewSale/NewSale";
-import { Subscribe } from "./components/Subscribe/Subscribe";
-import { LatestFromBlog } from "./components/LatestFromBlog/LatestFromBlog";
-
-// import MenPage from "./pages/MenPage/MenPage";
-// import { useState } from 'react';
-
+import { HomePage } from "./pages/HomePage/HomePage";
+import { WomenMenPage } from "./pages/WomenMenPage/WomenMenPage";
+import { ProductPage } from "./pages/ProductPage/ProductPage";
+import { Footer } from "./components/Footer/Footer";
+import { Route, Routes } from 'react-router-dom'
 
 import './App.css';
 
-function App() {
+const App = () => {
 
   return (
-    <div className='app' datd-test-id='app'>
-        <div className='App-wrapper'>
-            <Header /> 
-            <Clothes />  
-            <NewSale />
-            <Subscribe /> 
-            <LatestFromBlog />
+    <section className='app' datd-test-id='app'>
+        <div className='app-wrapper'>        
+          <Header /> 
+          <Routes>
+              <Route path='/' element={<HomePage />} exact />
+              <Route path='/Women' element={<WomenMenPage page={"Women"} />} exact />
+              <Route path='/Men' element={<WomenMenPage page={"Men"} />} exact />
+              <Route path='/Men/:id' element={<ProductPage page={"Men"} />} expect />
+              <Route path='/Women/:id' element={<ProductPage page={"Women"} />} expect />
+          </Routes>
+          <Footer />
         </div>
-    </div>
+    </section> 
   );
 }
 

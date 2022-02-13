@@ -1,27 +1,32 @@
-.wrapper-card-product {
+.cards-item {
+  text-decoration: none;
+  color: #000;
+}
+
+.cards-item .wrapper-card-product {
   width: 255px;
   margin-top: 40px;
 }
 
-.wrapper-card-product .card-product-img img {
+.cards-item .wrapper-card-product .card-product-img img {
   width: 100%;
   grid-template: 318px;
   margin-bottom: 10px;
 }
 
-.wrapper-card-product .card-product-name, .wrapper-card-product .card-product-price {
+.cards-item .wrapper-card-product .card-product-name, .cards-item .wrapper-card-product .card-product-price {
   font-family: 'Spartan';
   font-size: 14px;
   opacity: 60%;
   display: block;
 }
 
-.wrapper-card-product .card-product-price {
+.cards-item .wrapper-card-product .card-product-price {
   font-weight: bold;
   opacity: 100%;
 }
 
-.wrapper-card-product .wrapper-card-product-price-starts {
+.cards-item .wrapper-card-product .wrapper-card-product-price-starts {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

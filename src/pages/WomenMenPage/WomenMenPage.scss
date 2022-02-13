@@ -1,0 +1,91 @@
+.products-page {
+    width: 100%;
+    margin: 0 auto;
+    font-family: 'Spartan';
+    font-size: 11px;
+
+    .wrapper-products-page-nav {
+        background: #F8F8F8;
+
+        .products-page-nav {
+            width: 89%;
+            height: 32px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .products-page-nav_page {
+                span {
+                    opacity: 60%;
+                }
+            }
+
+            .products-page-nav_share {
+                width: 61px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+        }
+    }
+    .wrapper-products-page_title {
+        background: #F8F8F8;
+
+        .products-page_title {
+            width: 89%;
+            height: 70px;
+            font-size: 26px;
+            font-weight: bold;
+            margin: 0 auto;
+            text-align: center;
+            padding-top: 10px;
+        }
+    }
+    .products-page_filters {
+        width: 89%;
+        margin: 0 auto;
+        margin-top: 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .products-page_filter, .products-page_view {
+            width: 95px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            opacity: 60%;
+            font-size: 13px;
+            letter-spacing: 1px;
+        }
+        .products-page_view {
+            width: 72px;
+
+            button {
+                background: none;
+                border: none;
+            }
+        }
+        .products-page_select {
+
+            select {
+                border: none;
+                opacity: 60%;
+                font-size: 13px;
+                letter-spacing: 1px;
+            }
+        }
+    }
+    .products-page_card-product {
+        width: 89%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+    .products-page_loading {
+        text-align: center;
+        padding: 30px;
+    }
+}

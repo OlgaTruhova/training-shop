@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import {CLOTHES} from "../../data/CLOTHES";
 import stars from '../../assets/png/stars.png';
 
@@ -12,14 +13,21 @@ const CardProduct = (productType) => {
             {CLOTHES.map(({id, name, price, img, category}) => (
                 
                 typeProduct === category ?
-                <div key={`${category}${id}`} className="wrapper-card-product">
-                    <div className="card-product-img"><img src={img} alt="img" /></div>
-                    <span className="card-product-name">{name}</span>
-                    <div className="wrapper-card-product-price-starts">
-                        <span className="card-product-price">{price}</span>
-                        <img src={stars} alt="stars" />
-                    </div>
-                </div>
+                <Link 
+                    to={`/${typeProduct}/${id}`} 
+                    key={`${category}${id}`} 
+                    className="cards-item" 
+                    data-test-id={`clothes-card-${typeProduct}`}>
+                        
+                        <div className="wrapper-card-product">
+                            <div className="card-product-img"><img src={img} alt="img" /></div>
+                            <span className="card-product-name">{name}</span>
+                            <div className="wrapper-card-product-price-starts">
+                                <span className="card-product-price">{price}</span>
+                                <img src={stars} alt="stars" />
+                            </div>
+                        </div>
+                </Link>
                 : null
             ))}
         </>

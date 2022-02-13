@@ -3,7 +3,7 @@
 }
 
 .container-header-nav-menu .header-nav-menu {
-  width: 87%;
+  width: 89%;
   height: 66px;
   margin: 0 auto;
   display: -webkit-box;
@@ -80,4 +80,4 @@
     height: calc(100px + (66 - 100) * ((100vw - 320px) / (1300 - 320)));
   }
 }
-/*# sourceMappingURL=Header.css.map */
+/*# sourceMappingURL=NavMenu.css.map */

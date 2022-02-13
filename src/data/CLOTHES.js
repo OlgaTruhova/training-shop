@@ -73,56 +73,56 @@ export const CLOTHES = [
         img: imgWomen8
     },
     {
-        id: 9,
+        id: 1,
         category: 'men',
         name: "Men's tracksuit Q109",
         price: '$ 30.00',
         img: imgMen1
     },
     {
-        id: 10,
+        id: 2,
         category: 'men',
         name: "Men's tracksuit Q109",
         price: '$ 30.00',
         img: imgMen2
     },
     {
-        id: 11,
+        id: 3,
         category: 'men',
         name: "Men's tracksuit Q109",
         price: '$ 30.00',
         img: imgMen3
     },
     {
-        id: 12,
+        id: 4,
         category: 'men',
         name: "Men's tracksuit Q109",
         price: '$ 30.00',
         img: imgMen4
     },
     {
-        id: 13,
+        id: 5,
         category: 'men',
         name: "Men's tracksuit Q109",
         price: '$ 30.00',
         img: imgMen5
     },
     {
-        id: 14,
+        id: 6,
         category: 'men',
         name: "Men's tracksuit Q109",
         price: '$ 30.00',
         img: imgMen6
     },
     {
-        id: 15,
+        id: 7,
         category: 'men',
         name: "Men's tracksuit Q109",
         price: '$ 30.00',
         img: imgMen7
     },
     {
-        id: 16,
+        id: 8,
         category: 'men',
         name: "Men's tracksuit Q109",
         price: '$ 30.00',

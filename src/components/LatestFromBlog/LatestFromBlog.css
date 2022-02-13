@@ -66,6 +66,10 @@
   padding-bottom: 20px;
 }
 
+.container-latest-from-blog .latest-from-blog-img .img-one .latest-from-blog-text .text1, .container-latest-from-blog .latest-from-blog-img .img-two .latest-from-blog-text .text1, .container-latest-from-blog .latest-from-blog-img .img-three .latest-from-blog-text .text1 {
+  opacity: 80%;
+}
+
 .container-latest-from-blog .latest-from-blog-img .img-two {
   background: url(../../assets/img/blog-2.jpg) center/100% no-repeat;
 }
