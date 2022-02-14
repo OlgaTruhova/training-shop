@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { CATEGORIES } from "../../data/CATEGORIES";
 import { INFORMATION } from "../../data/INFORMATION";
 import { USEFULLINKS } from "../../data/USEFUL_LINKS";
+import { CONTACTUS } from "../../data/CONTACT_US";
 import pay from "../../assets/png/pay.png";
 
 import "./Footer.css";
@@ -25,30 +26,35 @@ const Footer = () => {
             <div className="wrapper-footer-nav">
                 <div className="footer-nav">
                     <strong>CATEGORIES</strong>
-                    {CATEGORIES.map(({ id, path }) => (
+                    {CATEGORIES.map(({ id, path, name }) => (
                         <Link key={id} to={`/${path}`} className='footer-nav-link' data-test-id={`footer-nav-link-${path}`}>
-                            <span>{path}</span>
+                            <span>{name}</span>
                         </Link>
                     ))}
                 </div>
                 <div className="footer-nav">
                     <strong>INFORMATION</strong>
-                    {INFORMATION.map(({ id, path }) => (
+                    {INFORMATION.map(({ id, path, name }) => (
                         <Link key={id} to={`/${path}`} className='footer-nav-link' data-test-id={`footer-nav-link-${path}`}>
-                            <span>{path}</span>
+                            <span>{name}</span>
                         </Link>
                     ))}
                 </div>
                 <div className="footer-nav">
                     <strong>USEFUL LINKS</strong>
-                    {USEFULLINKS.map(({ id, path }) => (
+                    {USEFULLINKS.map(({ id, path, name }) => (
                         <Link key={id} to={`/${path}`} className='footer-nav-link' data-test-id={`footer-nav-link-${path}`}>
-                            <span>{path}</span>
+                            <span>{name}</span>
                         </Link>
                     ))}
                 </div>
                 <div className="footer-nav">
                     <strong>CONTACT US</strong>
+                    {CONTACTUS.map(({ id, img, path, name }) => (
+                        <Link key={id} to={`/${path}`} className='footer-nav-link' data-test-id={`footer-nav-link-${path}`}>
+                            <img src={img} alt="img" /><span>{name}</span>
+                        </Link>
+                    ))}
                 </div>
             </div>
 

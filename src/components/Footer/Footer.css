@@ -93,6 +93,10 @@
   opacity: 80%;
 }
 
+.footer .wrapper-footer-nav .footer-nav .footer-nav-link img {
+  margin-right: 10px;
+}
+
 .footer .wrapper-footer-contact-inform {
   background: #F8F8F8;
   font-size: 11px;

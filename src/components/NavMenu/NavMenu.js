@@ -15,9 +15,9 @@ const NavMenu = () => {
             <nav className='header-nav-menu'>
                 <Link to="/" className='header-nav-logo' data-test-id='header-logo-link'>CleverShop</Link>
                 <div className='menu' data-test-id='menu'>
-                    {MENU.map(({ id, path }) => (
+                    {MENU.map(({ id, path, name }) => (
                         <Link key={id} to={`/${path}`} className='menu-item' data-test-id={`menu-link-${path}`}>
-                            <span>{path}</span>
+                            <span>{name}</span>
                         </Link>
                     ))}
                 </div>

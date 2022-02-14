@@ -11,16 +11,19 @@ import "./WomenMenPage.css";
 const WomenMenPage = (page) => {
 
     const typePage = page.page;
-    const pageUpper = typePage.toUpperCase();
-    const pageLower = typePage.toLowerCase();
+    const typePageUpper = typePage.toUpperCase();
+    const productType  = typePage.toLowerCase();
+    console.log(typePage);
+    console.log(typePageUpper);
+    console.log(productType);
     
     return (
-        <section className='products-page' data-test-id={`products-page-${pageLower}`}>
+        <section className='products-page' data-test-id={`products-page-${productType}`}>
 
             <ProductPageNav page={typePage} />
         
             <div className='wrapper-products-page_title'>
-                <div className='products-page_title'>{pageUpper}</div>
+                <div className='products-page_title'>{typePageUpper}</div>
             </div>
             
             <div className='products-page_filters'>
@@ -38,7 +41,7 @@ const WomenMenPage = (page) => {
                 </div>
             </div>
             <div className='products-page_card-product'>
-                <CardProduct productType={pageLower} />
+                <CardProduct productType={productType} />
             </div>
             <div className='products-page_loading'><img src={squareLoading} alt='img' /></div>
 

@@ -1,18 +1,22 @@
 export const CATEGORIES = [
     {
         id: 1, 
-        path: 'Men'
+        path: 'men',
+        name: 'Men',
     },
     {
         id: 2, 
-        path: 'Women'
+        path: 'women',
+        name: 'Women',
     },
     {
         id: 3, 
-        path: 'Accessories'
+        path: 'accessories',
+        name: 'Accessories',
     },
     {
         id: 4, 
-        path: 'Beauty'
+        path: 'beauty',
+        name: 'Beauty',
     },
 ];

@@ -1,18 +1,22 @@
 export const INFORMATION = [
     {
         id: 1, 
-        path: 'About Us'
+        path: 'aboutus',
+        name: 'About Us',
     },
     {
         id: 2, 
-        path: 'Contact'
+        path: 'contact',
+        name: 'Contact Us',
     },
     {
         id: 3, 
-        path: 'Blog'
+        path: 'blog',
+        name: 'Blog',
     },
     {
         id: 4, 
-        path: 'FAQs'
+        path: 'faqs',
+        name: 'FAQs',
     },
 ];

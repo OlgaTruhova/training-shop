@@ -1,18 +1,22 @@
 export const USEFULLINKS = [
     {
         id: 1, 
-        path: 'Terms & Conditions'
+        path: 'termsconditions',
+        name: 'Terms & Conditions',
     },
     {
         id: 2, 
-        path: 'Returns & Exchanges'
+        path: 'returnsexchanges',
+        name: 'Returns & Exchanges',
     },
     {
         id: 3, 
-        path: 'Shipping & Delivery'
+        path: 'shippingdelivery',
+        name: 'Shipping & Delivery',
     },
     {
         id: 4, 
-        path: 'Privacy Policy'
+        path: 'privacypolicy',
+        name: 'Privacy Policy',
     },
 ];

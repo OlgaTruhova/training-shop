@@ -11,15 +11,15 @@ import './App.css';
 const App = () => {
 
   return (
-    <section className='app' datd-test-id='app'>
-        <div className='app-wrapper'>        
+    <section className='app-wrapper' >
+        <div className='app' data-test-id='app'>        
           <Header /> 
           <Routes>
               <Route path='/' element={<HomePage />} exact />
-              <Route path='/Women' element={<WomenMenPage page={"Women"} />} exact />
-              <Route path='/Men' element={<WomenMenPage page={"Men"} />} exact />
-              <Route path='/Men/:id' element={<ProductPage page={"Men"} />} expect />
-              <Route path='/Women/:id' element={<ProductPage page={"Women"} />} expect />
+              <Route path='/women' element={<WomenMenPage page={"Women"} />} exact />
+              <Route path='/men' element={<WomenMenPage page={"Men"} />} exact />
+              <Route path='/men/:id' element={<ProductPage page={"Men"} />} expect />
+              <Route path='/women/:id' element={<ProductPage page={"Women"} />} expect />
           </Routes>
           <Footer />
         </div>

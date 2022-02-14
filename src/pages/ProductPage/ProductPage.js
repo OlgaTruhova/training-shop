@@ -29,11 +29,13 @@ import "./ProductPage.css";
 
 
 const ProductPage = (page) => {
-    const productType = page.page + ` ► ${page.page}'s tracksuit Q109`;
+    const pages = page.page;
+    const productType = pages.toLowerCase();
+    const pageType = page.page + ` ► ${page.page}'s tracksuit Q109`;
     
     return (
-        <section className="page-product"  data-test-id={`products-page-${productType}`}>
-            <ProductPageNav page={productType} />
+        <section className="page-product"  data-test-id={`product-page-${productType}`}>
+            <ProductPageNav page={pageType} />
             <div className='wrapper-page-products_title'>
                 <div className='products-page_title'>{`${page.page}'s tracksuit Q109`}</div>
             </div>

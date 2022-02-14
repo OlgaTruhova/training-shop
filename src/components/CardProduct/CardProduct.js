@@ -7,6 +7,7 @@ import "./CardProduct.css";
 
 const CardProduct = (productType) => {
     const typeProduct = Object.values(productType).join();
+    console.log(typeProduct)
     
     return (
         <>
@@ -14,10 +15,11 @@ const CardProduct = (productType) => {
                 
                 typeProduct === category ?
                 <Link 
-                    to={`/${typeProduct}/${id}`} 
-                    key={`${category}${id}`} 
+                    to={`/${typeProduct}/${id}`}  
                     className="cards-item" 
-                    data-test-id={`clothes-card-${typeProduct}`}>
+                    data-test-id={`clothes-card-${typeProduct}`}
+                    key={`${category}${id}`}
+                >
                         
                         <div className="wrapper-card-product">
                             <div className="card-product-img"><img src={img} alt="img" /></div>
