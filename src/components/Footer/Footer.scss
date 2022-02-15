@@ -9,12 +9,12 @@
 
         .footer-contact-form {
             width: 89%;
-            height: 56px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 12px;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-wrap: wrap;
     
             span {
                 color: #fff;
@@ -23,6 +23,8 @@
     
             .contact-form {
                 width: 45%;
+                min-width: 280px;
+                margin: 10px;
                 display: flex;
                 justify-content: space-between;
 
@@ -41,18 +43,23 @@
                     color: #fff;
                 }
             }
+            @media screen and (max-width: 705px) { 
+                justify-content: center;
+            }
         }
     }
 
     .wrapper-footer-nav {
         width: 89%;
-        height: 237px;
         margin: 0 auto;
         padding: 40px 20px;
         display: flex;
         justify-content: space-between;
+        flex-wrap: wrap;
 
         .footer-nav {
+            min-height: 130px;
+            margin: 20px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -72,6 +79,9 @@
                 }
             }
         }
+        @media screen and (max-width: 705px) { 
+            justify-content: flex-start;
+        }
     }
 
     .wrapper-footer-contact-inform {
@@ -80,13 +90,12 @@
 
         .footer-contact-inform {
             width: 89%;
-            height: 40px;
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
-            padding: 0 20px;
+            padding: 15px;
 
             img {
                 width: 100%;
@@ -99,5 +108,4 @@
             }
         }
     }
-    
 }

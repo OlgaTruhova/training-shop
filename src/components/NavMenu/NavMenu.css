@@ -4,7 +4,7 @@
 
 .container-header-nav-menu .header-nav-menu {
   width: 89%;
-  height: 66px;
+  padding: 17px 0;
   margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -72,12 +72,6 @@
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-  }
-}
-
-@media screen and (max-width: 540px) {
-  .container-header-nav-menu .header-nav-menu {
-    height: calc(100px + (66 - 100) * ((100vw - 320px) / (1300 - 320)));
   }
 }
 /*# sourceMappingURL=NavMenu.css.map */

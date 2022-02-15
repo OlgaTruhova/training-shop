@@ -3,7 +3,7 @@
 
     .header-nav-menu {
         width: 89%;
-        height: 66px;
+        padding: 17px 0;
         margin: 0 auto;
         display: flex;
         justify-content: space-between;
@@ -52,11 +52,6 @@
     @media screen and (max-width: 940px) {
         .header-nav-menu {
             justify-content: center;
-        }
-    }
-    @media screen and (max-width: 540px) {
-        .header-nav-menu {
-            height: calc(100px + (66 - 100) * ((100vw - 320px) / (1300 - 320)));
         }
     }
 }
