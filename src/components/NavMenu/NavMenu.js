@@ -39,7 +39,7 @@ const NavMenu = () => {
                     <a href="#"><img src={globe} alt='img' /></a>
                     <a href="#"><img src={user} alt='img' /></a>
                     <a href="#"><img src={shoppingBag} alt='img' /></a>
-                    <button type="button" className={classNames("hamburger", {visible: isMenuOpen})} onClick={toggleMenuMode} data-test-id="burger-menu-btn">
+                    <button type="button" className={classNames("burger-menu-btn", {visible: isMenuOpen})} onClick={toggleMenuMode} data-test-id="burger-menu-btn">
                         <div className="line line1"></div>
                         <div className="line line2"></div>
                         <div className="line line3"></div>

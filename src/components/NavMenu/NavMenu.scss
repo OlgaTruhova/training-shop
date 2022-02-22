@@ -1,5 +1,5 @@
 .wrapper-header-nav-menu {
-    .header-nav-menu, .menu, .menu-nav {
+    .header-nav-menu, .burger-menu, .menu-nav {
         width: 89%;
         height: 60px;
         margin: 0 auto;
@@ -15,7 +15,7 @@
             color: #000;
         }
     
-        .menu {
+        .burger-menu {
             width: 53%;
             list-style-type: none;
             padding: 0;
@@ -31,7 +31,7 @@
 
         @media screen and (max-width: 996px) {
 
-            .menu {
+            .burger-menu {
                 position: absolute;
                 z-index: 20;
                 top: calc(220px + (83 - 220) * ((100vw - 320px) / (996 - 320)));
@@ -55,7 +55,7 @@
                 }
             }
 
-            .menu.visible {
+            .burger-menu.visible {
                 transform: translateX(0);
                 transition: transform 0.8s;
             }
@@ -65,7 +65,7 @@
             width: 129px;
             margin: 10px;
 
-            .hamburger {
+            .burger-menu-btn {
                 display: none;
                 border: none;
                 background: none;
@@ -84,24 +84,24 @@
                 }
             }
             @media screen and (max-width: 996px) {
-                .hamburger {
+                .burger-menu-btn {
                     display: flex;
                 }
             }
             
-            .hamburger.visible {
+            .burger-menu-btn.visible {
                 .line1 {
                     transform: rotate(-45deg) translate(-8px, 10px);
                 }
             }
               
-            .hamburger.visible {
+            .burger-menu-btn.visible {
                 .line2 {
                     opacity: 0;
                 }
             }
               
-            .hamburger.visible {
+            .burger-menu-btn.visible {
                 .line3 {
                     transform: rotate(45deg) translate(-3px, -6px);
                 }
