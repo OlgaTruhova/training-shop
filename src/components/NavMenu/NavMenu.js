@@ -27,7 +27,7 @@ const NavMenu = () => {
         <section className="wrapper-header-nav-menu">
             <nav className='header-nav-menu'>
                 <Link to="/" className='header-nav-logo' data-test-id='header-logo-link'>CleverShop</Link>
-                <div className={classNames("menu", {visible: isMenuOpen})} data-test-id='burger-menu'>
+                <div className={classNames("burger-menu", {visible: isMenuOpen})} data-test-id='burger-menu'>
                     {MENU.map(({ id, path, name }) => (
                         <Link key={id} to={`/${path}`} className='menu-item' onClick={toggleMenuMode} data-test-id={`menu-link-${path}`}>
                             <span>{name}</span>
