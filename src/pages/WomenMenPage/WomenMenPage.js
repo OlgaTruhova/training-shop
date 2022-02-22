@@ -13,9 +13,6 @@ const WomenMenPage = (page) => {
     const typePage = page.page;
     const typePageUpper = typePage.toUpperCase();
     const productType  = typePage.toLowerCase();
-    console.log(typePage);
-    console.log(typePageUpper);
-    console.log(productType);
     
     return (
         <section className='products-page' data-test-id={`products-page-${productType}`}>

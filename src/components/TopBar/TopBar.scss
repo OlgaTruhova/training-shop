@@ -41,14 +41,14 @@
         }
         @media screen and (max-width: 500px) {
             .top-bar_contacts {
-                width: calc(320px + (480 - 320) * ((100vw - 320px) / (1300 - 320)));
+                width: calc(320px + (480 - 320) * ((100vw - 320px) / (500 - 320)));
                 flex-wrap: wrap;
             }
         }
     }
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 996px) {
         .top-bar {
-            height: calc(100px + (24 - 100) * ((100vw - 320px) / (1300 - 320)));
+            height: calc(100px + (24 - 100) * ((100vw - 320px) / (996 - 320)));
         }
     }
 }

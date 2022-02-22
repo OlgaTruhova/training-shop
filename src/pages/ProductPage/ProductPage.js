@@ -1,17 +1,18 @@
-import React from "react";
+import {React} from "react";
 import { Link } from "react-router-dom";
 import { ProductPageNav } from "../../components/ProductPageNav/ProductPageNav";
 import { CLOTHESPROD } from "../../data/CLOTHES_PROD";
 import stars from '../../assets/png/stars.png';
+import { Slider } from '../../components/Slider/Slider';
 
-import arrowTop from '../../assets/png/arrow-top.png';
-import arrowBottom from '../../assets/png/arrow-bottom.png';
+
 import arrowLeft from '../../assets/png/arrow-left.png';
 import arrowRight from '../../assets/png/arrow-right.png';
-import img1 from "../../assets/img/ProductPage/1.png";
-import img2 from "../../assets/img/ProductPage/2.png";
-import img3 from "../../assets/img/ProductPage/3.png";
-import img4 from "../../assets/img/ProductPage/4.png";
+// import img1 from "../../assets/img/ProductPage/1.png";
+// import product from "../../assets/img/ProductPage/product.jpg";
+// import img2 from "../../assets/img/ProductPage/2.png";
+// import img3 from "../../assets/img/ProductPage/3.png";
+// import img4 from "../../assets/img/ProductPage/4.png";
 import color1 from "../../assets/img/ProductPage/color-1.png";
 import color2 from "../../assets/img/ProductPage/color-2.png";
 import color3 from "../../assets/img/ProductPage/color-3.png";
@@ -28,10 +29,23 @@ import mail from "../../assets/png/mail.png";
 import "./ProductPage.css";
 
 
+
+import { Swiper, SwiperSlide } from "swiper/react";
+// import "swiper/css";
+// import "swiper/css/free-mode";
+// import "swiper/css/navigation";
+// import "swiper/css/thumbs";
+// import { FreeMode, Navigation, Thumbs } from "swiper";
+import { Navigation} from "swiper";
+// import "./SwiperProductPage.css";
+
+
 const ProductPage = (page) => {
     const pages = page.page;
     const productType = pages.toLowerCase();
     const pageType = page.page + ` ► ${page.page}'s tracksuit Q109`;
+
+    // const [thumbsSwiper, setThumbsSwiper] = useState(null);
     
     return (
         <section className="page-product"  data-test-id={`product-page-${productType}`}>
@@ -47,23 +61,9 @@ const ProductPage = (page) => {
                 </div>
             </div>
             <div className="wrapper-product-information">
+    
                 <div className="product-information-img">
-                    <div className="product-information-review">
-                        <div className="product-information-btn">
-                            <button><img src={arrowTop} alt='img' /></button>
-                            <button><img src={arrowBottom} alt='img' /></button>
-                        </div>
-                        <img src={img1} alt='img' className="img"/>
-                        <img src={img2} alt='img' className="img"/>
-                        <img src={img3} alt='img' className="img"/>
-                        <img src={img4} alt='img' className="img"/>
-                    </div>
-                    <div className='product-information-main-img'>
-                        <div className='main-img'>
-                            <div className='arrow-circle-left'><img src={arrowLeft} alt='img' /></div>
-                            <div className='arrow-circle-right'><img src={arrowRight} alt='img' /></div>
-                        </div>             
-                    </div>
+                  <Slider />
                 </div>
                 <div className="product-information-information">
                     <div className="product-information-color">
@@ -145,32 +145,39 @@ const ProductPage = (page) => {
             <div className="related-products">
                 <span className="title">RELATED PRODUCTS</span>
                 <div className="related-products-btn">
-                    <button><img src={arrowLeft} alt='img' /></button>
-                    <button><img src={arrowRight} alt='img' /></button>
+                    <button className="btn-slider-left"><img src={arrowLeft} alt='img' /></button>
+                    <button className="btn-slider-right"><img src={arrowRight} alt='img' /></button>
                 </div>
             </div>
             <div className="related-products-card">
-                
-            {CLOTHESPROD.map(({id, name, price, img, category}) => (
 
-                <Link 
-                    to={`/${category}/${id}`} 
-                    key={`${category}${id}`} 
-                    className="cards-item" 
-                    data-test-id={`clothes-card-${category}`}>
-                        
-                        <div className="wrapper-card-product">
-                            <div className="card-product-img"><img src={img} alt="img" /></div>
-                            <span className="card-product-name">{name}</span>
-                            <div className="wrapper-card-product-price-starts">
-                                <span className="card-product-price">{price}</span>
-                                <img src={stars} alt="stars" />
+            <Swiper slidesPerView={4} spaceBetween={10} slidesPerGroup={1} modules={[Navigation]} className="related-products-swiper" data-test-id="related-slider"
+             navigation={{
+                nextEl: '.btn-slider-left', 
+                prevEl: '.btn-slider-right',
+            }} 
+            >
+                {CLOTHESPROD.map(({id, name, price, img, category}) => (
+                     <SwiperSlide to={`/${category}/${id}`} key={`${category}${id}`} >
+                    <Link 
+                        to={`/${category}/${id}`} 
+                        key={`${category}${id}`} 
+                        className="cards-item" 
+                        data-test-id={`clothes-card-${category}`}>
+                           
+                            <div className="wrapper-card-product">
+                                <div className="card-product-img"><img src={img} alt="img" /></div>
+                                <span className="card-product-name">{name}</span>
+                                <div className="wrapper-card-product-price-starts">
+                                    <span className="card-product-price">{price}</span>
+                                    <img src={stars} alt="stars" />
+                                </div>
                             </div>
-                        </div>
-                </Link>
-            ))}
-            </div>
-            
+                    </Link>
+                    </SwiperSlide> 
+                ))}
+             </Swiper>
+            </div>   
         </section>
     )
 }

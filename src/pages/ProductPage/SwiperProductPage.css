@@ -1,0 +1,30 @@
+.product-information-review.swiper {
+    height: 560px;
+}
+
+.product-information-review .swiper-wrapper {
+    width: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.product-information-review .swiper-slide {
+    width: 95px;
+}
+
+.product-information-main-img .swiper {
+    width: 448px;
+}
+
+.product-information-main-img .swiper-slide.swiper-slide-active {
+    height: 560px;
+}
+.product-information-main-img .swiper-slide.swiper-slide-active img {
+    width: 100%;
+}
+@media screen and (max-width: 1180px) {
+    .product-information-main-img .swiper-slide.swiper-slide-active img {
+        width: calc(250px + (446 - 250) * ((100vw - 320px) / (1280 - 320))); 
+        height: calc(360px + (560 - 360) * ((100vw - 320px) / (1280 - 320))); 
+    }
+}

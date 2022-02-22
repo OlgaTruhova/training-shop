@@ -1,20 +1,43 @@
 import React from 'react';
 
-import arrowLeft from '../../assets/png/arrow-left.png'
-import arrowRight from '../../assets/png/arrow-right.png'
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/navigation";
+import { Navigation } from "swiper";
+
 import './PartOne.css';
+import './SwiperPartOne.css';
 
 const PartOne = () => {
     return (
         <section className='header-part-one'>
-            <div className='header-banner'>
-                <div className='header-circle'><img src={arrowLeft} alt='img' /></div>
-                <div className='header-banner-text'>
-                    <span>BANNER</span>
-                    <span className='text'>YOUR TITLE TEXT</span>
+
+            <Swiper navigation={true} modules={[Navigation]} className="mySwiper" data-test-id='main-slider'>
+                <SwiperSlide>
+                    <div className='header-banner'>
+                        <div className='header-banner-text'>
+                            <span>BANNER</span>
+                            <span className='text'>YOUR TITLE TEXT</span>
+                        </div>
+                    </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                <div className='header-banner'>   
+                    <div className='header-banner-text'>
+                        <span>BANNER</span>
+                        <span className='text'>YOUR TITLE TEXT</span>
+                    </div>
                 </div>
-                <div className='header-circle'><img src={arrowRight} alt='img' /></div>
-            </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                <div className='header-banner'>     
+                    <div className='header-banner-text'>
+                        <span>BANNER</span>
+                        <span className='text'>YOUR TITLE TEXT</span>
+                    </div>     
+                </div>
+                </SwiperSlide>
+            </Swiper>
             <div className='header-group'>
                 <div className='header-women'>
                     <div>

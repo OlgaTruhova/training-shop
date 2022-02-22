@@ -32,4 +32,32 @@ export const CLOTHESPROD = [
         price: '$ 30.00',
         img: imgWomen4
     },
+    {
+        id: 5,
+        category: 'women',
+        name: "Women's tracksuit Q109",
+        price: '$ 30.00',
+        img: imgWomen1
+    },
+    {
+        id: 6,
+        category: 'women',
+        name: "Women's tracksuit Q109",
+        price: '$ 30.00',
+        img: imgWomen2
+    },
+    {
+        id: 7,
+        category: 'women',
+        name: "Women's tracksuit Q109",
+        price: '$ 30.00',
+        img: imgWomen3
+    },
+    {
+        id: 8,
+        category: 'women',
+        name: "Women's tracksuit Q109",
+        price: '$ 30.00',
+        img: imgWomen4
+    },
 ]

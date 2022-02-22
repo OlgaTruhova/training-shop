@@ -7,7 +7,6 @@ import "./CardProduct.css";
 
 const CardProduct = (productType) => {
     const typeProduct = Object.values(productType).join();
-    console.log(typeProduct)
     
     return (
         <>

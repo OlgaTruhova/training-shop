@@ -1,0 +1,56 @@
+.product-slider {
+    width: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.product-slider .product-slider-first .swiper  {
+    width: 360px;
+}
+
+.product-slider .swiper-button-prev, .product-slider .swiper-button-next {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #fff;
+}
+.product-slider .swiper-button-prev::after, .product-slider .swiper-button-next::after {
+    font-size: 15px;
+    color: #000;
+}
+
+
+.product-slider .product-slider-first .swiper-slide {
+    height: 560px;
+}
+
+.product-slider .product-slider-second {
+    width: 105px;
+}
+
+.product-slider .product-slider-second .swiper-slide, .product-slider .product-slider-second .swiper-wrapper {
+    width: 103px;
+    height: 115px;
+    margin: 0;
+}
+
+.product-slider .swiper-slide.swiper-slide-visible {
+    height: 115px !important;
+    opacity: 50%;
+}
+.product-slider .swiper-slide.swiper-slide-thumb-active {
+    opacity: 100%;
+}
+
+.button-slider {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.btn-slider-top, .btn-slider-bottom {
+    background: none;
+    border: none;
+    cursor: pointer;
+}

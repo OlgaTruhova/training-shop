@@ -1,0 +1,16 @@
+.header-part-one .swiper, .swiper-wrapper {
+    width: 540px;
+}
+    
+.header-part-one .swiper-button-prev, .swiper-button-next {
+    background: #fff;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    color: #000;
+}
+
+.header-part-one .swiper-button-next::after, .swiper-button-prev::after {
+    font-size: 15px;
+}
