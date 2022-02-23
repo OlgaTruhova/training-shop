@@ -28,24 +28,13 @@ import mail from "../../assets/png/mail.png";
 
 import "./ProductPage.css";
 
-
-
 import { Swiper, SwiperSlide } from "swiper/react";
-// import "swiper/css";
-// import "swiper/css/free-mode";
-// import "swiper/css/navigation";
-// import "swiper/css/thumbs";
-// import { FreeMode, Navigation, Thumbs } from "swiper";
 import { Navigation} from "swiper";
-// import "./SwiperProductPage.css";
-
 
 const ProductPage = (page) => {
     const pages = page.page;
     const productType = pages.toLowerCase();
     const pageType = page.page + ` ► ${page.page}'s tracksuit Q109`;
-
-    // const [thumbsSwiper, setThumbsSwiper] = useState(null);
     
     return (
         <section className="page-product"  data-test-id={`product-page-${productType}`}>
@@ -151,14 +140,31 @@ const ProductPage = (page) => {
             </div>
             <div className="related-products-card">
 
-            <Swiper slidesPerView={4} spaceBetween={10} slidesPerGroup={1} modules={[Navigation]} className="related-products-swiper" data-test-id="related-slider"
-             navigation={{
-                nextEl: '.btn-slider-left', 
-                prevEl: '.btn-slider-right',
-            }} 
+            <Swiper 
+                slidesPerView={1} 
+                spaceBetween={10} 
+                slidesPerGroup={1} 
+                modules={[Navigation]} 
+                breakpoints={{
+                    1200:{
+                        slidesPerView: 4,
+                    },
+                    900:{
+                        slidesPerView: 3,
+                    },
+                    600:{
+                        slidesPerView: 2,
+                    }
+                }} 
+                className="related-products-swiper" 
+                data-test-id="related-slider"
+                navigation={{
+                    nextEl: '.btn-slider-left', 
+                    prevEl: '.btn-slider-right'
+                }}
             >
                 {CLOTHESPROD.map(({id, name, price, img, category}) => (
-                     <SwiperSlide to={`/${category}/${id}`} key={`${category}${id}`} >
+                     <SwiperSlide to={`/${category}/${id}`} key={`${category}${id}`}>
                     <Link 
                         to={`/${category}/${id}`} 
                         key={`${category}${id}`} 

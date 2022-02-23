@@ -30,7 +30,7 @@ const Slider = () => {
                 navigation={true}
                 thumbs={{ swiper: thumbsSwiper }}
                 modules={[FreeMode, Navigation, Thumbs]}
-                className=".product-slider-first"
+                className="product-slider-first"
             >
                 <SwiperSlide>
                     <img src={product} alt="img" />
@@ -56,19 +56,23 @@ const Slider = () => {
                 
                 <Swiper
                     onSwiper={setThumbsSwiper}
-                    spaceBetween={30}
-                    slidesPerView={4}
+                    spaceBetween={20}
+                    slidesPerView={3}
                     freeMode={true}
                     watchSlidesProgress={true}
                     modules={[FreeMode, Navigation, Thumbs]}
-                    className=".product-slider-second"
-
+                    className="product-slider-second"
+                    breakpoints={{
+                        470:{
+                            spaceBetween: 30,
+                            slidesPerView: 4
+                        }
+                    }} 
                     navigation={{
                         nextEl: '.btn-slider-bottom', 
                         prevEl: '.btn-slider-top',
                     }}
                     direction={'vertical'}
-                    style={{height: '560px'}}
                 >
                     <SwiperSlide>
                         <img src={img1} alt="img" />

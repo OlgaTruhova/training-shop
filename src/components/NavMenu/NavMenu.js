@@ -17,12 +17,6 @@ const NavMenu = () => {
         toggleMenu(!isMenuOpen);
     }
 
-    window.addEventListener('onClick', function(e) {
-        if(e.target.className !== 'hamburger' && e.target.tagName !== 'button'){
-            toggleMenuMode();
-        }
-    });
-
     return (
         <section className="wrapper-header-nav-menu">
             <nav className='header-nav-menu'>
