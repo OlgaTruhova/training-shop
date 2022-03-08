@@ -1,1 +1,0 @@
-export const filterButtons = ['NEW ARRIVALS', 'SPECIALS', 'BESTSELLERS', 'MOST VIEWED', 'FEATURED PRODUCTS'];

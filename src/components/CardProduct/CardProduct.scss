@@ -6,6 +6,17 @@
         width: 255px;
         margin-top: 40px;
     
+        .card-product-discount {
+            width: 53px;
+            height: 31px;
+            background: #E91E63;
+            color: #fff;
+            font-weight: bold;
+            font-size: 12px;
+            text-align: center;
+            padding-top: 10px;
+            position: absolute;
+        }
         .card-product-img {
             img {
                 width: 100%;
@@ -13,15 +24,20 @@
                 margin-bottom: 10px;
             }
         }
-        .card-product-name, .card-product-price {
+        .card-product-name, .card-product-price, .card-product-price-discount {
             font-family: 'Spartan';
             font-size: 14px;
             opacity: 60%;
             display: block;
         }
-        .card-product-price {
+        .card-product-price, .card-product-price-discount {
             font-weight: bold;
             opacity: 100%;
+            padding-right: 5px;
+        }
+        .active {
+            font-size: 12px;
+            opacity: 40%;
         }
     
         .wrapper-card-product-price-starts {
@@ -29,6 +45,10 @@
             justify-content: space-between;
             align-items: center;
             margin: 10px 0;
+
+            .wrapper-card-product-price {
+                display: flex;
+            }
         }
     }
 }

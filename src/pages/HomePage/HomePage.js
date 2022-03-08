@@ -11,7 +11,8 @@ const HomePage = () => {
         <>
             <PartOne />
             <Advantage />
-            <Clothes />
+            <Clothes typeCategory={'women'} />
+            <Clothes typeCategory={'men'} />
             <NewSale />
             <Subscribe /> 
             <LatestFromBlog />

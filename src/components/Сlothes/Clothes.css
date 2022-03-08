@@ -47,6 +47,11 @@
   cursor: pointer;
 }
 
+.clothes .clothes-wrapper-title .clothes-filter-menu .clothes-filter-btn.activ {
+  opacity: 100%;
+  font-weight: bold;
+}
+
 @media screen and (max-width: 370px) {
   .clothes .clothes-wrapper-title .clothes-filter-menu {
     min-width: 220px;

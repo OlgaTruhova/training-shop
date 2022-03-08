@@ -102,6 +102,22 @@
   letter-spacing: 1px;
 }
 
+.products-page .products-page_filters .products-page_filter-btn {
+  border: none;
+  background: none;
+  width: 85px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+}
+
 .products-page .products-page_card-product {
   width: 89%;
   margin: 0 auto;
@@ -117,5 +133,48 @@
 .products-page .products-page_loading {
   text-align: center;
   padding: 30px;
+}
+
+.products-page .filter {
+  display: none;
+  background: #F8F8F8;
+  font-family: 'Spartan';
+  font-size: 13px;
+  width: 89%;
+  height: 300%;
+  margin: 0 auto;
+  padding: 20px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.products-page .filter .filter-block {
+  width: 22%;
+  min-width: 220px;
+  height: 272px;
+  overflow: auto;
+  margin: 0 10px;
+}
+
+.products-page .filter .filter-block input {
+  margin-right: 10px;
+  width: 18px;
+  height: 18px;
+}
+
+.products-page .filter .filter-title {
+  display: block;
+  font-size: 14px;
+  font-weight: bold;
+  margin: 10px 0 20px;
+}
+
+.products-page .filter.visible {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 /*# sourceMappingURL=WomenMenPage.css.map */

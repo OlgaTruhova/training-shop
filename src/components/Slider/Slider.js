@@ -5,17 +5,13 @@ import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/navigation";
 import "swiper/css/thumbs";
-
 import "./Slider.css";
-
 import { FreeMode, Navigation, Thumbs } from "swiper";
-
-import img1 from "../../assets/img/ProductPage/1.png";
-import product from "../../assets/img/ProductPage/product.jpg";
 import arrowTop from '../../assets/png/arrow-top.png';
 import arrowBottom from '../../assets/png/arrow-bottom.png';
 
-const Slider = () => {
+const Slider = (img) => {
+    const images = img.img;
     const [thumbsSwiper, setThumbsSwiper] = useState(null);
 
     return (
@@ -32,21 +28,13 @@ const Slider = () => {
                 modules={[FreeMode, Navigation, Thumbs]}
                 className="product-slider-first"
             >
-                <SwiperSlide>
-                    <img src={product} alt="img" />
-                </SwiperSlide>
-                <SwiperSlide>
-                    <img src={product} alt="img" />
-                </SwiperSlide>
-                <SwiperSlide>
-                    <img src={product} alt="img" />
-                </SwiperSlide>
-                <SwiperSlide>
-                    <img src={product} alt="img" />
-                </SwiperSlide>
-                <SwiperSlide>
-                    <img src={product} alt="img" />
-                </SwiperSlide>
+                {
+                    images.map((img, i) => (
+                        <SwiperSlide key={i}>
+                            <img src={`https://training.cleverland.by/shop${img.url}`} alt="img" />
+                        </SwiperSlide>
+                    ))
+                }
             </Swiper>
             <div className="product-slider-second">
                 <div className="button-slider">
@@ -74,21 +62,13 @@ const Slider = () => {
                     }}
                     direction={'vertical'}
                 >
-                    <SwiperSlide>
-                        <img src={img1} alt="img" />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <img src={img1} alt="img" />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <img src={img1} alt="img" />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <img src={img1} alt="img" />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <img src={img1} alt="img" />
-                    </SwiperSlide>
+                    {
+                        images.map((img, i) => (
+                            <SwiperSlide key={i}>
+                                <img src={`https://training.cleverland.by/shop${img.url}`} alt="img" />
+                            </SwiperSlide>
+                        ))
+                    }
                 </Swiper>
             </div>
         </div>

@@ -76,6 +76,15 @@
                 letter-spacing: 1px;
             }
         }
+        .products-page_filter-btn {
+            border: none;
+            background: none;
+            width: 85px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+        }
     }
     .products-page_card-product {
         width: 89%;
@@ -88,4 +97,42 @@
         text-align: center;
         padding: 30px;
     }
+    .filter {
+        display: none;
+        background: #F8F8F8;
+        font-family: 'Spartan';
+        font-size: 13px;
+        width: 89%;
+        height: 300%;
+        margin: 0 auto;
+        padding: 20px;
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+        .filter-block {
+            width: 22%;
+            min-width: 220px;
+            height: 272px;
+            overflow: auto;
+            margin: 0 10px;
+
+            input {
+                margin-right: 10px;
+                width: 18px;
+                height: 18px;
+            }
+        }
+        
+        .filter-title {
+            display: block;
+            font-size: 14px;
+            font-weight: bold;
+            margin: 10px 0 20px;
+        }
+    }
+    
+    .filter.visible {
+        display: flex;
+    }
 }
+

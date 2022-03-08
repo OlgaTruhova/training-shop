@@ -1,30 +1,39 @@
-import React from "react";
+import React, { useState } from "react";
 import { CardProduct } from "../CardProduct/CardProduct";
-import { productType } from "../../data/PRODUCT_TYPE";
-import { filterButtons } from "../../data/FILTER_BUTTONS";
+import { clothesMenuButtons } from "../../data/CLOTHES_MENU_BUTTONS";
+import { PRODUCTS } from "../../data/PRODUCTS";
 
 import "./Clothes.css";
 
-const Clothes = () => {
+const Clothes = (typeCategory) => {
+    const typeProduct = typeCategory.typeCategory;
+    const [particulars, setParticulars] = useState('isNewArrivals');
+    
+    const changeClothesMenuButtons = (e) => {
+        setParticulars(e.target.value);
+    }
 
     return (
         <>
-            {productType.map(productType => (
-                 <div className="clothes" data-test-id={`clothes-${productType}`} key={productType}>
-                    <div className="clothes-wrapper-title">
-                        <div className="clothes-title">{productType.toUpperCase()}{"'S"}</div>
-                        <div className="clothes-filter-menu">
-                            {filterButtons.map(btnName => (
-                                 <button className="clothes-filter-btn" key={btnName}>{btnName}</button>
-                            ))}
-                        </div>
+                <div className="clothes" data-test-id={`clothes-${typeProduct}`} key={typeProduct}>
+                <div className="clothes-wrapper-title">
+                    <div className="clothes-title">{typeProduct.toUpperCase()}{"'S"}</div>
+                    <div className="clothes-filter-menu">
+                        {clothesMenuButtons.map(({particulars, name}) => (
+                                <button type="button" className={"clothes-filter-btn"} key={particulars} onClick={changeClothesMenuButtons} value={particulars} data-test-id={`clothes-${typeProduct}-${particulars}`}>{name}</button>
+                        ))}
                     </div>
-                    <div className="clothes-card">
-                        <CardProduct productType={productType} />
-                    </div>
-                    <div className="clothes-btn-see-all"><button>SEE ALL</button></div>
                 </div>
-            ))}
+                <div className="clothes-card">
+                    {PRODUCTS[typeProduct].map(product => (
+                        
+                        product.particulars[particulars] === true ?
+                        <CardProduct product={product} key={product.id} />
+                        : null
+                    ))}
+                </div>
+                <div className="clothes-btn-see-all"><button>SEE ALL</button></div>
+            </div>
         </>
     )
 }

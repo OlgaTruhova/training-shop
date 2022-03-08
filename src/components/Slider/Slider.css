@@ -53,6 +53,15 @@
     opacity: 100%;
 }
 
+.product-slider .swiper-slide {
+    overflow: hidden;
+}
+
+.product-slider .swiper-slide > img {
+    width: 100%;
+    cursor: pointer;
+}
+
 @media screen and (max-width: 580px) {
     .product-slider .product-slider-first .swiper-slide > img {
         width: calc(215px + (448 - 215) * ((100vw - 320px) / (1200 - 320)));
