@@ -177,4 +177,22 @@
   display: -ms-flexbox;
   display: flex;
 }
+
+.products-page .show-filter-result {
+  width: 89%;
+  margin: 0 auto;
+  padding-top: 10px;
+}
+
+.products-page .show-filter-result .show-filter-result-opasity, .products-page .show-filter-result .show-filter-result-bold {
+  font-size: 12px;
+  display: inline-block;
+  margin: 0 5px;
+  font-weight: bold;
+}
+
+.products-page .show-filter-result .show-filter-result-opasity {
+  opacity: 40%;
+  margin: 0 5px;
+}
 /*# sourceMappingURL=WomenMenPage.css.map */

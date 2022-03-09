@@ -15,7 +15,7 @@ const CardProduct = (product) => {
             <Link 
                 to={`/${productInf.category}/${productInf.id}`}  
                 className="cards-item" 
-                data-test-id={`clothes-card-${productInf.typeProduct}`}
+                data-test-id={`clothes-card-${productInf.category}`}
             >
                 <div className="wrapper-card-product">
                     {productInf.discount !== null ? 

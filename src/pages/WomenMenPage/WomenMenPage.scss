@@ -134,5 +134,23 @@
     .filter.visible {
         display: flex;
     }
+
+    .show-filter-result {
+        width: 89%;
+        margin: 0 auto;
+        padding-top: 10px;
+
+        .show-filter-result-opasity, .show-filter-result-bold {
+            font-size: 12px;
+            display: inline-block;
+            margin: 0 5px;
+            font-weight: bold;
+        }
+
+        .show-filter-result-opasity {
+            opacity: 40%;
+            margin: 0 5px;
+        }
+    }
 }
 

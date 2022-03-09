@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import classNames from "classnames";
 import { ProductPageNav } from "../../components/ProductPageNav/ProductPageNav";
 import { CardProduct } from "../../components/CardProduct/CardProduct";
@@ -38,7 +38,6 @@ function ProductPage (page) {
     let discountProduct = product.discount;
     let ratingProduct = product.rating;
 
-
     let colorProd = [];
     product.images.forEach(color => {
         let res = colorProd.some(col => col === color.color);
@@ -69,6 +68,16 @@ function ProductPage (page) {
         }
         setUseSize(arrSize);
     }
+
+    const buttonStyleChange = () => {
+        let btnColorImg = document.getElementsByClassName("colorImages");
+        [...btnColorImg].forEach(btn => btn.name === colorImg ? btn.style.border = '2px solid black' : btn.style.border = 'none');  
+    }
+    
+    useEffect(() => {
+        buttonStyleChange()
+    }, [buttonStyleChange])
+
 
     const productType = pages.toLowerCase();
     const pageType = page.page + ` ► ${nameProduct}`;
@@ -101,7 +110,7 @@ function ProductPage (page) {
                         <div className="product-information-color-img">
                             {
                                 colorImgProd.map((img, i) => (
-                                    <img src={`https://training.cleverland.by/shop${img[0]}`} name={img[1]} onClick={colorImgProduct} alt='img' key={i}/>
+                                    <img src={`https://training.cleverland.by/shop${img[0]}`} className="colorImages" name={img[1]} onClick={colorImgProduct} alt='img' key={i}/>
                                 ))
                             }
                         </div>
@@ -113,11 +122,10 @@ function ProductPage (page) {
                             ))}
                         </div>
                         <div className="product-information-size-btn">
-                            {sizesProduct.map((size, i) => (
-                                <div className="size-btn" key={i}>
-                                    <input type='checkbox' name={size} value={size} id={size} onChange={selectedSize} />
-                                    <label htmlFor={size}>{size}</label>
-                                </div>
+                            {sizesProduct.map((size, i) => (    
+                                <label className="size-btn" htmlFor={size} key={i}>{size}
+                                    <input className="size-btns" type='checkbox' name={size} value={size} key={i} id={size} onChange={selectedSize} />
+                                </label>
                             ))}
                         </div>
                         <button className="button"><img src={hanger} alt='img' /><span>  Size guide</span></button>

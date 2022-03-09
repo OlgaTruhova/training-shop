@@ -17,7 +17,7 @@ export class WomenMenPage extends React.Component {
         colorsProduct: [],
         sizesProduct: [],
         brandsProduct: [],
-        priceProduct: ['500+', '200-500', '100-200', '50-100', '0-50'],
+        priceProduct: ['$ 500+', '$ 200-500', '$ 100-200', '$ 50-100', '$ 0-50'],
         isMenuOpen: false,
         filters: {
             color: [],
@@ -120,11 +120,11 @@ export class WomenMenPage extends React.Component {
 
     filterByPrice = (key) => (price) => {
         const prices = {
-            '500+': price >= 500, 
-            '200-500': price >= 200 && price < 500,
-            '100-200': price >= 100 && price < 200,
-            '50-100': price >=50 && price < 100,
-            '0-50': price >= 0 && price < 50,
+            '$ 500+': price >= 500, 
+            '$ 200-500': price >= 200 && price < 500,
+            '$ 100-200': price >= 100 && price < 200,
+            '$ 50-100': price >=50 && price < 100,
+            '$ 0-50': price >= 0 && price < 50,
         };
         return prices[key];
     } 
@@ -182,6 +182,57 @@ export class WomenMenPage extends React.Component {
                     isMenuOpen={this.state.isMenuOpen}
                     filterСategory={this.filterСategory}
                 />
+                <div className='show-filter-result'>
+                    {
+                        this.state.filterProduct.length > 0 ? 
+                        <>
+                            <span className='show-filter-result-bold'>{this.state.filterProduct.length}</span>
+                            <span className='show-filter-result-bold'>items Found</span>
+                        </>
+                        : null
+                    }
+                    {
+                        this.state.filters.color.length > 0 ? 
+                        <>
+                            <span className='show-filter-result-opasity'>Color:</span>
+                            {this.state.filters.color.map(color => (
+                                <span className='show-filter-result-opasity' key={color}>{color}</span>
+                            ))}
+                        </>
+                        : null
+                    }
+                    {
+                        this.state.filters.size.length > 0 ? 
+                        <>
+                            <span className='show-filter-result-opasity'>Size:</span>
+                            {this.state.filters.size.map(size => (
+                                <span className='show-filter-result-opasity' key={size}>{size}</span>
+                            ))}
+                        </>
+                        : null
+                    }
+                    {
+                        this.state.filters.brand.length > 0 ? 
+                        <>
+                            <span className='show-filter-result-opasity'>Brand:</span>
+                            {this.state.filters.brand.map(brand => (
+                                <span className='show-filter-result-opasity' key={brand}>{brand}</span>
+                            ))}
+                        </>
+                        : null
+                    }
+                    {
+                        this.state.filters.price.length > 0 ? 
+                        <>
+                            <span className='show-filter-result-opasity'>Price:</span>
+                            {this.state.filters.price.map(price => (
+                                <span className='show-filter-result-opasity' key={price}>{price}</span>
+                            ))}
+                        </>
+                        : null
+                    }
+                    
+                </div>
                 <div className='products-page_card-product'>
                     {                
                         this.state.filterProduct.length > 0 ? 
