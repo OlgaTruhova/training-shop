@@ -50,11 +50,11 @@ const Clothes = (typeCategory) => {
                         : null
                     ))}
                 </div>
-                <div className="clothes-btn-see-all">
+                <label className="clothes-btn-see-all">
                     <Link to={`/${typeProduct}`}>
                             <button>SEE ALL</button>
                     </Link>
-                </div>
+                </label>
             </div>
         </>
     )
