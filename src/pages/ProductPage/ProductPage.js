@@ -44,6 +44,15 @@ function ProductPage (page) {
         return res !== true ? colorProd.push(color.color) : null; 
     })
 
+    const isChecked = () => {
+        const sizeElem = document.getElementsByClassName("size-btn")
+
+        sizeElem[0].children[0].defaultChecked = true;
+        if (sizeElem[0].children[0].defaultChecked) {
+            sizeElem[0].children[0].style.border = '2px solid black'
+        }
+    }
+
     let colorImgProd = [];
     colorProd.forEach(color => {
         product.images.find(prodcol => prodcol.color === color ? colorImgProd.push([prodcol.url, prodcol.color]) : null)
@@ -54,6 +63,15 @@ function ProductPage (page) {
     const colorImgProduct = (e) => {  
         setColorImg(e.target.name);
     }
+
+    const buttonStyleChangeColor = () => {
+        let btnColorImg = document.getElementsByClassName("colorImages");
+        [...btnColorImg].forEach(btn => btn.name === colorImg ? btn.style.border = '2px solid black' : btn.style.border = 'none');  
+    }
+    
+    useEffect(() => {
+        buttonStyleChangeColor()
+    }, [buttonStyleChangeColor])
 
     const [useSize, setUseSize] = useState([]);
 
@@ -69,22 +87,30 @@ function ProductPage (page) {
         setUseSize(arrSize);
     }
 
-    const buttonStyleChange = () => {
-        let btnColorImg = document.getElementsByClassName("colorImages");
-        [...btnColorImg].forEach(btn => btn.name === colorImg ? btn.style.border = '2px solid black' : btn.style.border = 'none');  
+    const buttonStyleChangeSize = (e) => {
+        e.target.checked === true ? e.currentTarget.style.border = '2px solid black' : e.currentTarget.style.border = 'none' 
+    }
+
+    const defaultSelect = () => {
+        setColorImg(colorProd[0]);
+        setUseSize([sizesProduct[0]])
     }
     
     useEffect(() => {
-        buttonStyleChange()
-    }, [buttonStyleChange])
+        defaultSelect()
+    }, [colorProd[0]])
+
+    useEffect(() => {
+        isChecked()
+    }, [isChecked]);
 
 
     const productType = pages.toLowerCase();
-    const pageType = page.page + ` ► ${nameProduct}`;
+    const pageType = page.page;
     
     return (
         <section className="page-product"  data-test-id={`product-page-${productType}`}>
-            <ProductPageNav page={pageType} />
+            <ProductPageNav page={pageType} nameProduct={nameProduct} />
             <div className='wrapper-page-products_title'>
                 <div className='products-page_title'>{nameProduct}</div>
             </div>
@@ -122,8 +148,8 @@ function ProductPage (page) {
                             ))}
                         </div>
                         <div className="product-information-size-btn">
-                            {sizesProduct.map((size, i) => (    
-                                <label className="size-btn" htmlFor={size} key={i}>{size}
+                            {sizesProduct.map((size, i) => (
+                                <label className="size-btn" htmlFor={size} key={i} onClick={buttonStyleChangeSize}>{size}
                                     <input className="size-btns" type='checkbox' name={size} value={size} key={i} id={size} onChange={selectedSize} />
                                 </label>
                             ))}

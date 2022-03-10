@@ -24,7 +24,12 @@
           align-items: center;
 }
 
-.products-page .wrapper-products-page-nav .products-page-nav .products-page-nav_page span {
+.products-page .wrapper-products-page-nav .products-page-nav .products-page-nav_page a {
+  text-decoration: none;
+}
+
+.products-page .wrapper-products-page-nav .products-page-nav .products-page-nav_page a span {
+  color: black;
   opacity: 60%;
 }
 

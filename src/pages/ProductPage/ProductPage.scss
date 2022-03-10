@@ -17,8 +17,12 @@
             align-items: center;
 
             .products-page-nav_page {
-                span {
-                    opacity: 60%;
+                a {
+                    text-decoration: none;
+                    span {
+                        color: black;
+                        opacity: 60%;
+                    }
                 }
             }
 
@@ -128,10 +132,6 @@
                         text-align: center;
                         padding-top: 5px;
                         cursor: pointer;
-                    
-                        .active {
-                            border: 2px solid black;
-                        }
 
                         input {
                             width: 40px;

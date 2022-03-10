@@ -1,33 +1,29 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { CardProduct } from "../CardProduct/CardProduct";
 import { clothesMenuButtons } from "../../data/CLOTHES_MENU_BUTTONS";
 import { PRODUCTS } from "../../data/PRODUCTS";
+import { Link } from "react-router-dom";
 
 import "./Clothes.css";
 
 const Clothes = (typeCategory) => {
     const typeProduct = typeCategory.typeCategory;
+    
     const [particulars, setParticulars] = useState('isNewArrivals');
  
     const changeClothesMenuButtons = (e) => {
         setParticulars(e.target.value);
+        isChecked();
     }
 
-    
-    const buttonStyleChange = (e) => {
-        let btnWomen = document.getElementsByClassName('clothes-filter-women-btn');
-        [...btnWomen].forEach(btn => btn === e.target ? btn.className = "clothes-filter-women-btn activ" : btn.className = "clothes-filter-women-btn"
-        );
-
-        let btnMen = document.getElementsByClassName('clothes-filter-men-btn');
-        [...btnMen].forEach(btn => btn === e.target ? btn.className = "clothes-filter-men-btn activ" : btn.className = "clothes-filter-men-btn"
-        );
+    const isChecked = () => {
+        const butonsClothesMenu = document.getElementsByClassName("clothes-filter-btn");
+        [...butonsClothesMenu].forEach(btn => btn.children[0].checked ? btn.style.opacity = '100%' :  btn.style.opacity = '60%' )
     }
 
-    const func = (e) => {
-        changeClothesMenuButtons(e);
-        buttonStyleChange(e)
-    }
+    useEffect(() => {
+        isChecked()
+    }, [isChecked])
 
     return (
         <>
@@ -35,12 +31,14 @@ const Clothes = (typeCategory) => {
                 <div className="clothes-wrapper-title">
                     <div className="clothes-title">{typeProduct.toUpperCase()}{"'S"}</div>
                     <div className="clothes-filter-menu">
+                            <label key="isNewArrivals" onChange={changeClothesMenuButtons} className={`clothes-filter-btn`} > 
+                            NEW ARRIVALS
+                                <input type="radio" name={typeProduct} value='isNewArrivals' data-test-id={`clothes-${typeProduct}-"isNewArrivals"`} className="button-clothes-menu" defaultChecked/>
+                            </label>
                         {clothesMenuButtons.map(({particulars, name}) => (
-                                <button type="button" className={`clothes-filter-${typeProduct}-btn`} key={particulars} 
-                                onClick={func} 
-                                value={particulars}
-                                name={`${particulars}${typeProduct}`} 
-                                data-test-id={`clothes-${typeProduct}-${particulars}`}>{name}</button>
+                            <label key={particulars} onChange={changeClothesMenuButtons} className={`clothes-filter-btn`} > {name}
+                                <input type="radio" name={typeProduct} value={particulars} data-test-id={`clothes-${typeProduct}-${particulars}`} className="button-clothes-menu" />
+                            </label>
                         ))}
                     </div>
                 </div>
@@ -52,7 +50,11 @@ const Clothes = (typeCategory) => {
                         : null
                     ))}
                 </div>
-                <div className="clothes-btn-see-all"><button>SEE ALL</button></div>
+                <div className="clothes-btn-see-all">
+                    <Link to={`/${typeProduct}`}>
+                            <button>SEE ALL</button>
+                    </Link>
+                </div>
             </div>
         </>
     )

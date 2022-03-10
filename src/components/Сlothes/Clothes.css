@@ -19,7 +19,7 @@
       flex-wrap: wrap;
 }
 
-.clothes .clothes-wrapper-title .clothes-title, .clothes .clothes-wrapper-title .clothes-filter-btn {
+.clothes .clothes-wrapper-title .clothes-title {
   font-family: 'Spartan';
   letter-spacing: 2px;
   font-weight: bold;
@@ -38,17 +38,15 @@
       flex-wrap: wrap;
 }
 
-.clothes .clothes-wrapper-title .clothes-filter-menu .clothes-filter-women-btn, .clothes .clothes-wrapper-title .clothes-filter-menu .clothes-filter-men-btn {
-  background: none;
-  border: none;
-  font-weight: 500;
+.clothes .clothes-wrapper-title .clothes-filter-menu .clothes-filter-btn {
   font-size: 12px;
   opacity: 60%;
   cursor: pointer;
+  font-family: 'Spartan';
 }
 
-.clothes .clothes-wrapper-title .clothes-filter-menu .activ {
-  opacity: 100%;
+.clothes .clothes-wrapper-title .clothes-filter-menu .clothes-filter-btn input {
+  display: none;
 }
 
 @media screen and (max-width: 370px) {
