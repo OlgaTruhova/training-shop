@@ -44,22 +44,12 @@ function ProductPage (page) {
         return res !== true ? colorProd.push(color.color) : null; 
     })
 
-    const isChecked = () => {
-        const sizeElem = document.getElementsByClassName("size-btn")
-
-        sizeElem[0].children[0].defaultChecked = true;
-        if (sizeElem[0].children[0].defaultChecked) {
-            sizeElem[0].style.border ='2px solid black'
-        }
-    }
-
     let colorImgProd = [];
     colorProd.forEach(color => {
         product.images.find(prodcol => prodcol.color === color ? colorImgProd.push([prodcol.url, prodcol.color]) : null)
     })
 
     const [colorImg, setColorImg] = useState(colorProd[0]);
-
     const colorImgProduct = (e) => {  
         setColorImg(e.target.name);
     }
@@ -73,27 +63,24 @@ function ProductPage (page) {
         buttonStyleChangeColor()
     }, [buttonStyleChangeColor])
 
-    const [useSize, setUseSize] = useState([]);
-
-    const selectedSize = (e) => {
-        let arrSize = [...useSize];
-        if(e.target.checked === true) {
-            arrSize.push(e.target.value);
-        } else {
-            arrSize.forEach((size, i) => {
-                size === e.target.value ? arrSize.splice(i, 1) : null;
-            });
-        }
-        setUseSize(arrSize);
+    const [useSize, setUseSize] = useState('');
+    const sizeImgProduct = (e) => {
+        setUseSize(e.target.value);
     }
 
-    const buttonStyleChangeSize = (e) => {
-        e.target.checked === true ? e.currentTarget.style.border = '2px solid black' : e.currentTarget.style.border = 'none' 
+
+    const buttonStyleChangeSize = () => {
+        let btnSize = document.getElementsByClassName("size-btn");
+        [...btnSize].forEach(btn => btn.value === useSize ? btn.style.border = '2px solid black' : btn.style.border = 'none');  
     }
-    
+
+    useEffect(() => {
+        buttonStyleChangeSize()
+    }, [buttonStyleChangeSize])
+
     const defaultSelect = () => {
         setColorImg(colorProd[0]);
-        setUseSize([sizesProduct[0]])
+        setUseSize(sizesProduct[0])
     }
     
     useEffect(() => {
@@ -103,11 +90,6 @@ function ProductPage (page) {
     useEffect(() => {
         defaultSelect()
     }, [sizesProduct[0]])
-
-    useEffect(() => {
-        isChecked()
-    }, [isChecked]);
-
 
     const productType = pages.toLowerCase();
     const pageType = page.page;
@@ -146,16 +128,11 @@ function ProductPage (page) {
                         </div>
                     </div>
                     <div className="product-information-size">
-                        <div><span className="text">SIZE:</span>
-                            {useSize.map((size, i) => (
-                                <span key={i} className="text">{size}</span>
-                            ))}
+                        <div><span className="text">SIZE:</span><span className="text">{useSize}</span>
                         </div>
                         <div className="product-information-size-btn">
                             {sizesProduct.map((size, i) => (
-                                <label className="size-btn" htmlFor={size} key={i} onClick={buttonStyleChangeSize}>{size}
-                                    <input className="size-btns" type='checkbox' name={size} value={size} key={i} id={size} onChange={selectedSize} />
-                                </label>
+                                <button className="size-btn" key={i} onClick={sizeImgProduct} value={size}>{size}</button>
                             ))}
                         </div>
                         <button className="button"><img src={hanger} alt='img' /><span>  Size guide</span></button>
@@ -233,8 +210,6 @@ function ProductPage (page) {
                             </div>
                             ))}
                         </div>
-
-
                     </div>
                 </div>
             </div>
