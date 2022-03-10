@@ -49,7 +49,7 @@ function ProductPage (page) {
 
         sizeElem[0].children[0].defaultChecked = true;
         if (sizeElem[0].children[0].defaultChecked) {
-            sizeElem[0].children[0].style.border = '2px solid black'
+            sizeElem[0].style.border ='2px solid black'
         }
     }
 
@@ -90,7 +90,7 @@ function ProductPage (page) {
     const buttonStyleChangeSize = (e) => {
         e.target.checked === true ? e.currentTarget.style.border = '2px solid black' : e.currentTarget.style.border = 'none' 
     }
-
+    
     const defaultSelect = () => {
         setColorImg(colorProd[0]);
         setUseSize([sizesProduct[0]])
@@ -99,6 +99,10 @@ function ProductPage (page) {
     useEffect(() => {
         defaultSelect()
     }, [colorProd[0]])
+
+    useEffect(() => {
+        defaultSelect()
+    }, [sizesProduct[0]])
 
     useEffect(() => {
         isChecked()

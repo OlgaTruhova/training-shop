@@ -31,13 +31,13 @@ const Clothes = (typeCategory) => {
                 <div className="clothes-wrapper-title">
                     <div className="clothes-title">{typeProduct.toUpperCase()}{"'S"}</div>
                     <div className="clothes-filter-menu">
-                            <label key="isNewArrivals" onChange={changeClothesMenuButtons} className={`clothes-filter-btn`} > 
+                            <label key="isNewArrivals" onChange={changeClothesMenuButtons} className={`clothes-filter-btn`} data-test-id={`clothes-${typeProduct}-isNewArrivals`}> 
                             NEW ARRIVALS
-                                <input type="radio" name={typeProduct} value='isNewArrivals' data-test-id={`clothes-${typeProduct}-"isNewArrivals"`} className="button-clothes-menu" defaultChecked/>
+                                <input type="radio" name={typeProduct} value='isNewArrivals' className="button-clothes-menu" defaultChecked/>
                             </label>
                         {clothesMenuButtons.map(({particulars, name}) => (
-                            <label key={particulars} onChange={changeClothesMenuButtons} className={`clothes-filter-btn`} > {name}
-                                <input type="radio" name={typeProduct} value={particulars} data-test-id={`clothes-${typeProduct}-${particulars}`} className="button-clothes-menu" />
+                            <label key={particulars} onChange={changeClothesMenuButtons} className={`clothes-filter-btn`} data-test-id={`clothes-${typeProduct}-${particulars}`}> {name}
+                                <input type="radio" name={typeProduct} value={particulars} className="button-clothes-menu" />
                             </label>
                         ))}
                     </div>
