@@ -1,14 +1,14 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation} from "swiper";
 import classNames from "classnames";
+import { PRODUCTS } from "../../data/PRODUCTS";
 import { ProductPageNav } from "../../components/ProductPageNav/ProductPageNav";
 import { CardProduct } from "../../components/CardProduct/CardProduct";
-import stars from '../../assets/png/stars.png';
-import notStars from '../../assets/png/not-star.png';
 import { Slider } from '../../components/Slider/Slider';
-import { useParams } from "react-router-dom";
-import { PRODUCTS } from "../../data/PRODUCTS";
-
-
+import { Rating } from "../../components/Rating/Rating";
+import { ByInCart } from "../../components/ByInCart/ByInCart";
 import arrowLeft from '../../assets/png/arrow-left.png';
 import arrowRight from '../../assets/png/arrow-right.png';
 import hanger from "../../assets/img/ProductPage/hanger.png";
@@ -19,78 +19,80 @@ import annotation from "../../assets/img/ProductPage/annotation.png";
 import car from "../../assets/png/car2.png";
 import arrowsCircle from "../../assets/png/arrows-circle2.png";
 import mail from "../../assets/png/mail.png";
-
 import "./ProductPage.css";
 
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation} from "swiper";
 
-function ProductPage (page) {
+const ProductPage = (page) => {
     const pages = page.page;
 
-    let idProduct = useParams();
-    let product = PRODUCTS[pages.toLowerCase()].find(prod => prod.id===idProduct.id);
-    let nameProduct = product.name;
-    let materialProduct = product.material;
-    let priceProduct = product.price;
-    let sizesProduct = product.sizes;
-    let reviewsProduct = product.reviews;
-    let discountProduct = product.discount;
-    let ratingProduct = product.rating;
+    const idProduct = useParams();
+    const idProducta = idProduct.id;
+    const product = PRODUCTS[pages.toLowerCase()].find(prod => prod.id===idProduct.id);
+    const nameProduct = product.name;
+    const materialProduct = product.material;
+    const priceProduct = product.price;
+    const sizesProduct = product.sizes;
+    const reviewsProduct = product.reviews;
+    const discountProduct = product.discount;
+    const ratingProduct = product.rating;
 
-    let colorProd = [];
+    const colorProductText = [];
     product.images.forEach(color => {
-        let res = colorProd.some(col => col === color.color);
-        return res !== true ? colorProd.push(color.color) : null; 
+        let res = colorProductText.some(col => col === color.color);
+        return res !== true ? colorProductText.push(color.color) : null; 
     })
 
-    let colorImgProd = [];
-    colorProd.forEach(color => {
-        product.images.find(prodcol => prodcol.color === color ? colorImgProd.push([prodcol.url, prodcol.color]) : null)
+    const colorProductImg = [];
+    
+    colorProductText.forEach(color => {
+        product.images.find(prodcol => prodcol.color === color ? colorProductImg.push([prodcol.url, prodcol.color]) : null)
     })
 
-    const [colorImg, setColorImg] = useState(colorProd[0]);
+    const [useColor, setUseColor] = useState(colorProductText[0]);
+    const [imgProduct, setImgProduct] = useState(`https://training.cleverland.by/shop${colorProductImg[0][0]}`);
     const colorImgProduct = (e) => {  
-        setColorImg(e.target.name);
+        setUseColor(e.target.name);
+        setImgProduct(e.target.src);
     }
 
     const buttonStyleChangeColor = () => {
         let btnColorImg = document.getElementsByClassName("colorImages");
-        [...btnColorImg].forEach(btn => btn.name === colorImg ? btn.style.border = '2px solid black' : btn.style.border = 'none');  
+        [...btnColorImg].forEach(btn => btn.name === useColor ? btn.style.border = '2px solid black' : btn.style.border = 'none');  
     }
     
-    useEffect(() => {
-        buttonStyleChangeColor()
-    }, [buttonStyleChangeColor])
+    useEffect(() => { buttonStyleChangeColor() }, [buttonStyleChangeColor])
 
     const [useSize, setUseSize] = useState('');
     const sizeImgProduct = (e) => {
         setUseSize(e.target.value);
     }
 
-
     const buttonStyleChangeSize = () => {
         let btnSize = document.getElementsByClassName("size-btn");
         [...btnSize].forEach(btn => btn.value === useSize ? btn.style.border = '2px solid black' : btn.style.border = 'none');  
     }
+    useEffect(() => { buttonStyleChangeSize() }, [buttonStyleChangeSize])
 
-    useEffect(() => {
-        buttonStyleChangeSize()
-    }, [buttonStyleChangeSize])
+    const [discounProductPrice, setDiscounProductPrice] = useState(0);
+    
+    const discountProductPrice = (price, discount) => {
+        const pric =  discount !== null ? +((price * (100 - +discount.replace(/[\D]+/g, '')))/100).toFixed(2) : price;
+        setDiscounProductPrice(pric);
+    }
+    useEffect(() => { discountProductPrice(priceProduct, discountProduct) }, [discountProductPrice])
 
     const defaultSelect = () => {
-        setColorImg(colorProd[0]);
-        setUseSize(sizesProduct[0])
+        setUseColor(colorProductText[0]);
+        setUseSize(sizesProduct[0]);
+        setImgProduct(`https://training.cleverland.by/shop${colorProductImg[0][0]}`);
     }
     
-    useEffect(() => {
-        defaultSelect()
-    }, [colorProd[0]])
+    useEffect(() => { defaultSelect() }, [colorProductText[0]])
+    useEffect(() => { defaultSelect() }, [sizesProduct[0]])
+    useEffect(() => { defaultSelect() }, [`https://training.cleverland.by/shop${colorProductImg[0][0]}`])
 
-    useEffect(() => {
-        defaultSelect()
-    }, [sizesProduct[0]])
-
+    const orderedProduct =  {idProducta, nameProduct, useColor, useSize, discounProductPrice, counter: 1, imgProduct, 
+    price: discounProductPrice};
     const productType = pages.toLowerCase();
     const pageType = page.page;
     
@@ -102,8 +104,7 @@ function ProductPage (page) {
             </div>
             <div className="wrapper-rating">
                 <div> 
-                    {new Array(ratingProduct).fill(1).map((star, i) => (<img src={stars} alt="stars" key={star+i}/>))}
-                    {new Array(5 - ratingProduct).fill(1).map((star, i) => (<img src={notStars} alt="stars" key={star+i}/>))}
+                    <Rating rating={ratingProduct} />
                     <span>{reviewsProduct.length} Reviews</span>
                 </div>
                 <div className="wrapper-rating_availability">
@@ -118,17 +119,17 @@ function ProductPage (page) {
                 </div>
                 <div className="product-information-information">
                     <div className="product-information-color">
-                        <div><span className="text">COLOR:</span><span className="text1">{colorImg}</span></div>
+                        <div><span className="text">COLOR:</span><span className="text1">{useColor}</span></div>
                         <div className="product-information-color-img">
                             {
-                                colorImgProd.map((img, i) => (
+                                colorProductImg.map((img, i) => (
                                     <img src={`https://training.cleverland.by/shop${img[0]}`} className="colorImages" name={img[1]} onClick={colorImgProduct} alt='img' key={i}/>
                                 ))
                             }
                         </div>
                     </div>
                     <div className="product-information-size">
-                        <div><span className="text">SIZE:</span><span className="text">{useSize}</span>
+                        <div><span className="text">SIZE:</span><span className="text1">{useSize}</span>
                         </div>
                         <div className="product-information-size-btn">
                             {sizesProduct.map((size, i) => (
@@ -143,12 +144,13 @@ function ProductPage (page) {
                                 }
                                 <span className={classNames("card-product-price", {active: discountProduct !== null})}>$ {priceProduct}</span>
                             </div>
+                            <ByInCart orderedProduct={orderedProduct} />
+                            <div className="product-images">
+                                <img src={heart} alt='img' />
+                                <img src={scale} alt='img' />
+                            </div>
                             
-                            <button>ADD TO CARD</button>
-                            <img src={heart} alt='img' />
-                            <img src={scale} alt='img' />
                         </div>
-                        
                         <div className="product-information-services">
                             <div>
                                 <img src={car} alt='img' />
@@ -174,7 +176,7 @@ function ProductPage (page) {
                         <div className="product-information-additional">
                             <span className="title">ADDITIONAL INFORMATION</span>
                             <span className="text1">Color:</span>
-                            <div>{colorProd.map(color => (<span className="text" key={color}>{color}</span>))}</div>
+                            <div>{colorProductText.map(color => (<span className="text" key={color}>{color}</span>))}</div>
                             
                             <span className="text1">Size:</span>
                             <div>
@@ -190,8 +192,7 @@ function ProductPage (page) {
                             <div className="reviews-rating">
                                 <div>
                                     <div className="reviews-rating-stars">
-                                        {new Array(ratingProduct).fill(1).map((star, i) => (<img src={stars} alt="stars" key={star+i}/>))}
-                                        {new Array(5 - ratingProduct).fill(1).map((star, i) => (<img src={notStars} alt="stars" key={star+i}/>))}
+                                        <Rating rating={ratingProduct} />
                                     </div>
                                     <span>{reviewsProduct.length} Reviews</span>
                                 </div>
@@ -201,10 +202,10 @@ function ProductPage (page) {
                             <div key={reviews.id}>
                                 <div className="reviews-rating2">
                                     <div><span className="text1">{reviews.name}</span></div>
-                                    <div><span className="text">3 months ago </span>
-                                        {new Array(reviews.rating).fill(1).map((star, i) => (<img src={stars} alt="stars" key={star+i}/>))}
-                                        {new Array(5 - reviews.rating).fill(1).map((star, i) => (<img src={notStars} alt="stars" key={star+i}/>))}
-                                        </div>
+                                    <div>
+                                        <span className="text">3 months ago </span>
+                                        <Rating rating={reviews.rating}/>
+                                    </div>
                                 </div>
                                 <div className="reviews-rating2-text">{reviews.text}</div>
                             </div>
@@ -221,7 +222,6 @@ function ProductPage (page) {
                 </div>
             </div>
             <div className="related-products-card">
-
             <Swiper 
                 slidesPerView={1} 
                 spaceBetween={10} 

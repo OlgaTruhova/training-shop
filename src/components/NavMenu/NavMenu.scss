@@ -46,7 +46,7 @@
                 padding-left: 10%;
                 background: rgba(255, 255, 255, 0.9);
                 transform: translateX(-100%);
-                transition: transform 0.8s;
+                transition: transform 0.7s;
     
                 .menu-item {
                     margin: 25px 0;
@@ -57,7 +57,7 @@
 
             .burger-menu.visible {
                 transform: translateX(0);
-                transition: transform 0.8s;
+                transition: transform 0.7s;
             }
         }
 

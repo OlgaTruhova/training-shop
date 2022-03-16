@@ -1,0 +1,133 @@
+* {
+    font-family: 'Spartan';
+    font-size: 15px;
+}
+
+.container-cart {
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    justify-content: flex-end;
+    
+    transform: translateX(100%);
+    transition: transform 0.2s;
+}
+
+.container-cart.visible {
+    display: flex;
+    transform: translateX(0);
+    transition: transform 0.2s;
+}
+
+.container-cart__cart {
+    position: absolute;
+    right: 0;
+    width: 360px;
+    height: 100vh;
+    background: #FFFFFF;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    transform: translateX(100%);
+    transition: transform 0.7s;
+}
+
+.container-cart__cart-1 {
+    width: 100%;
+    height: 100%;
+}
+
+.container-cart__cart.visible {
+    transform: translateX(0);
+    transition: transform 0.7s;
+}
+
+.cart__menu_button {
+    color: #E6E6E6;
+}
+
+.cart__menu_button.activ {
+    color: #121212;
+}
+
+.container-part {
+    padding: 20px;
+}
+
+.container-cart__cart_title, .container-cart__cart_menu {
+    width: 100%;
+    height: 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #121212;
+    color: #fff;
+    padding:  0 20px;
+}
+
+.container-cart__cart_title button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.container-cart__cart_menu {
+    background: none;
+}
+
+.container-cart__cart_menu button {
+    border: none;
+    background: none;
+}
+
+.container-cart__cart_items-cart {
+    height: 100%;
+    overflow: auto;
+}
+
+.container-cart__cart_total, .container-cart__cart_btn {
+    height: 48px;
+    display: block;
+    margin-top: 10px;
+}
+
+.container-cart__cart_total {
+    display: flex;
+    justify-content: space-between;
+}
+
+.cart__total_title {
+    font-weight: 400;
+}
+
+.cart__total_price {
+    font-size: 16px;
+}
+
+.container-cart__cart_btn button {
+    width: 100%;
+    height: 100%;
+}
+
+.one, .two {
+    background: #121212;
+    border: none;
+    color: #F8F8F8;
+}
+
+.two {
+    background: #F8F8F8;
+    color: #121212;
+}
+
+.sorry {
+    display: block;
+    font-size: 30px;
+    width: 50%;
+    margin: 20px auto;
+    text-align: center;
+}

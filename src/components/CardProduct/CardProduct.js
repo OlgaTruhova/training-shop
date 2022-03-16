@@ -1,8 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import classNames from "classnames";
-import stars from '../../assets/png/stars.png';
-import notStars from '../../assets/png/not-star.png';
+import { Rating } from "../Rating/Rating";
 
 import "./CardProduct.css";
 
@@ -36,10 +35,8 @@ const CardProduct = (product) => {
                             }
                             <span className={classNames("card-product-price", {active: productInf.discount !== null})}>$ {productInf.price}</span>
                         </div>
-                        
                         <div>
-                            {new Array(ratingProduct).fill(1).map((star, i) => (<img src={stars} alt="stars" key={star+i}/>))}
-                            {new Array(5 - ratingProduct).fill(1).map((star, i) => (<img src={notStars} alt="stars" key={star+i}/>))}
+                            <Rating rating={ratingProduct} />
                         </div>
                     </div>
                 </div>

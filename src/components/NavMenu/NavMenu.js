@@ -1,18 +1,17 @@
 import React, { useState } from "react";
-import classNames from "classnames";
-import { MENU } from '../../data/MENU';
 import { Link } from "react-router-dom";
+import classNames from "classnames";
+import { ButtonCart } from "../ButtonCart/ButtonCart";
+import { MENU } from '../../data/MENU';
 
 import search from "../../assets/png/search.png";
 import globe from "../../assets/png/globe.png";
 import user from "../../assets/png/user.png";
-import shoppingBag from "../../assets/png/shopping-bag.png";
 
 import "./NavMenu.css";
 
 const NavMenu = () => {
     const [isMenuOpen, toggleMenu] = useState(false);
-
     function toggleMenuMode () {
         toggleMenu(!isMenuOpen);
     }
@@ -32,7 +31,8 @@ const NavMenu = () => {
                     <a href="#"><img src={search} alt='img' /></a>
                     <a href="#"><img src={globe} alt='img' /></a>
                     <a href="#"><img src={user} alt='img' /></a>
-                    <a href="#"><img src={shoppingBag} alt='img' /></a>
+                    <ButtonCart />
+                    
                     <button type="button" className={classNames("burger-menu-btn", {visible: isMenuOpen})} onClick={toggleMenuMode} data-test-id="burger-menu-btn">
                         <div className="line line1"></div>
                         <div className="line line2"></div>
@@ -40,8 +40,7 @@ const NavMenu = () => {
                     </button>
                 </div>        
             </nav>
-        </section>
-        
+        </section>    
     )
 }
 
