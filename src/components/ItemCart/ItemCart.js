@@ -29,12 +29,12 @@ const ItemCart = (products) => {
               
                 <div className="item-cart__price-block">
                     <div className="item-cart__counter">
-                        <button onClick={changeCounter} data-test-id="minus-product">-</button>
+                        <button onClick={changeCounter} data-test-id='minus-product'>-</button>
                         <span>{product.counter}</span>
-                        <button onClick={changeCounter} data-test-id="plus-product">+</button>
+                        <button onClick={changeCounter} data-test-id='plus-product'>+</button>
                     </div>
                     <span>{`$ ${product.price}`}</span>
-                    <img className="item-cart__trash" src={trash} alt="img" onClick={changeCart} data-test-id="remove-product"/>
+                    <img className="item-cart__trash" src={trash} alt="img" onClick={changeCart} data-test-id='remove-product'/>
                 </div>
             </div>
         </section>

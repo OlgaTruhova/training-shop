@@ -19,7 +19,7 @@ const ButtonCart = () => {
         <> 
         <div className="container-button-cart">
             {productInCart.length > 0 ? <ItemsInCart quantity={productInCart.length} /> : null}
-            <button type="button" className="button-cart" onClick={toggleCartMode}><img src={shoppingBag} alt='img'/></button>
+            <button type="button" className="button-cart" onClick={toggleCartMode} data-test-id='cart-button'><img src={shoppingBag} alt='img'/></button>
         </div>
             
             <Cart />
