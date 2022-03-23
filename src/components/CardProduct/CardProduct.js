@@ -2,10 +2,10 @@ import React from "react";
 import { Link } from "react-router-dom";
 import classNames from "classnames";
 import { Rating } from "../Rating/Rating";
-
 import "./CardProduct.css";
 
 const CardProduct = (product) => {
+
     const productInf = product.product;
     let ratingProduct = productInf.rating;
     
@@ -41,9 +41,8 @@ const CardProduct = (product) => {
                     </div>
                 </div>
             </Link>
-
         </>
     )
 }
 
-export {CardProduct}
+export { CardProduct }

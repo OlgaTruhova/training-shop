@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { CardProduct } from "../CardProduct/CardProduct";
 import { clothesMenuButtons } from "../../data/CLOTHES_MENU_BUTTONS";
-import { PRODUCTS } from "../../data/PRODUCTS";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 import "./Clothes.css";
 
 const Clothes = (typeCategory) => {
     const typeProduct = typeCategory.typeCategory;
-    
+    const PRODUCTS = useSelector(state => state.products.products);
     const [particulars, setParticulars] = useState('isNewArrivals');
  
     const changeClothesMenuButtons = (e) => {
@@ -23,11 +23,11 @@ const Clothes = (typeCategory) => {
 
     useEffect(() => {
         isChecked()
-    }, [isChecked])
+    }, [isChecked]);
 
     return (
         <>
-                <div className="clothes" data-test-id={`clothes-${typeProduct}`} key={typeProduct}>
+            <div className="clothes" data-test-id={`clothes-${typeProduct}`} key={typeProduct}>
                 <div className="clothes-wrapper-title">
                     <div className="clothes-title">{typeProduct.toUpperCase()}{"'S"}</div>
                     <div className="clothes-filter-menu">
@@ -41,15 +41,15 @@ const Clothes = (typeCategory) => {
                             </label>
                         ))}
                     </div>
-                </div>
-                <div className="clothes-card">
-                    {PRODUCTS[typeProduct].map(product => (
-                        
-                        product.particulars[particulars] === true ?
-                        <CardProduct product={product} key={product.id} />
-                        : null
-                    ))}
-                </div>
+                </div>             
+                     <div className="clothes-card">
+                        {
+                            PRODUCTS[typeProduct].map(product => (
+                            product.particulars[particulars] === true ?
+                            <CardProduct product={product} key={product.id} />
+                            : null))
+                        }
+                    </div>
                 <label className="clothes-btn-see-all">
                     <Link to={`/${typeProduct}`}>
                             <button>SEE ALL</button>
@@ -60,5 +60,5 @@ const Clothes = (typeCategory) => {
     )
 }
 
-export {Clothes}
+export { Clothes }
 

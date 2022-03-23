@@ -7,7 +7,7 @@ import filterClosed from "../../assets/png/filter-closed.png";
 import viewGrid from "../../assets/png/view-grid.png";
 import viewList from "../../assets/png/view-list.png";
 import squareLoading from "../../assets/png/square-loading.png";
-import { PRODUCTS } from "../../data/PRODUCTS";
+import store from '../../redux/store';
 import { FilterProductsByCategory } from '../../components/FilterProductsByCategory/FilterProductsByCategory';
 
 import "./WomenMenPage.css";
@@ -58,6 +58,8 @@ export class WomenMenPage extends React.Component {
     addArrColorsProduct = () => {
         const {page} = this.props;
         const productType = page.toLowerCase();
+        const PRODUCTS = store.getState().products.products;
+
         let colorProd = [...this.state.colorsProduct];
         PRODUCTS[productType].forEach(product => {
             product.images.forEach(color => {
@@ -65,14 +67,16 @@ export class WomenMenPage extends React.Component {
                 return res !== true ? colorProd.push(color.color) : null; 
             })
         })   
-        this.setState({colorsProduct: colorProd})
+        this.setState({colorsProduct: colorProd});
     }
 
     addArrSizesProduct = () => {
         const {page} = this.props;
         const productType = page.toLowerCase();
+        const PRODUCTS = store.getState().products.products;
+
         let sizeProd = [...this.state.sizesProduct];
-        PRODUCTS[productType].forEach(product => {
+        PRODUCTS[productType]?.forEach(product => {
             product.sizes.forEach(size => {
                 let res = sizeProd.some(sizes => sizes === size);
                 return res !== true ? sizeProd.push(size) : null; 
@@ -85,7 +89,9 @@ export class WomenMenPage extends React.Component {
         const {page} = this.props;
         const productType = page.toLowerCase();
         let brandProd = [...this.state.brandsProduct];
-        PRODUCTS[productType].forEach(product => {
+        const PRODUCTS = store.getState().products.products;
+
+        PRODUCTS[productType]?.forEach(product => {
                 let res = brandProd.some(brand => brand === product.brand);
                 return res !== true ? brandProd.push(product.brand) : null; 
         })   
@@ -127,14 +133,14 @@ export class WomenMenPage extends React.Component {
             '$ 0-50': price >= 0 && price < 50,
         };
         return prices[key];
-    } 
-
+    }
 
     filterProduct = () => {
         const {page} = this.props;
         const productType = page.toLowerCase();
+        const PRODUCTS = store.getState().products.products;
 
-        let filterProd = PRODUCTS[productType].filter(product =>  
+        let filterProd = PRODUCTS[productType]?.filter(product =>  
 
             {
                 let isFilter =
@@ -155,8 +161,10 @@ export class WomenMenPage extends React.Component {
     render () {
         const {page} = this.props;
         const productType = page.toLowerCase();
+        const PRODUCTS = store.getState().products.products;
 
         return (
+
             <section className='products-page' data-test-id={`products-page-${productType}`}>
                 <ProductPageNav page={page} />
             
@@ -234,6 +242,7 @@ export class WomenMenPage extends React.Component {
                     
                 </div>
                 <div className='products-page_card-product'>
+                    
                     {                
                         this.state.filterProduct.length > 0 ? 
                         
@@ -246,7 +255,7 @@ export class WomenMenPage extends React.Component {
                         this.state.filters.size.length > 0 ||
                         this.state.filters.brand.length > 0 ||
                         this.state.filters.price.length > 0 ? null :
-
+                    
                         PRODUCTS[productType].map(product => (
                             <CardProduct product={product} key={product.id} />
                         ))
