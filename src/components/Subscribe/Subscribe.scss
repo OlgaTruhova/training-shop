@@ -72,7 +72,21 @@
                 height: 152px;
                 align-content: space-between;
 
-                input, button {
+                .subscribe-error, .subscribe-noerror {
+                    display: block;
+                    width: 100%;
+                    margin: 5px 0;
+                    text-align: center;
+                    font-family: 'Spartan', sans-serif;
+                    font-size: 12px;
+                    color: red;
+                }
+
+                .subscribe-noerror {
+                    color: green;
+                }
+
+                input, .button {
                     width: 64%;
                     height: 64px;
                     background: #121212;
@@ -83,7 +97,21 @@
                     text-transform: uppercase;
                     opacity: 90%;
                     display: block;
+                } 
+
+                .button {
+                    display: flex;
+                    justify-content: space-around;
+                    align-items: center;
                 }
+                .active {
+                    background: rgb(94, 94, 94);
+                }
+
+                input {
+                    color: #000;
+                }
+
                 @media screen and (max-width: 1220px) {
                     input, button {
                         height: calc(34px + (64 - 34) * ((100vw - 320px) / (1300 - 320)));

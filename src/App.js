@@ -2,7 +2,7 @@ import React from 'react';
 import { Route, Routes } from 'react-router-dom'
 import { Header } from "./Header/Header";
 import { HomePage } from "./pages/HomePage/HomePage";
-import { WomenMenPage } from "./pages/WomenMenPage/WomenMenPage";
+import { WomenMenPag } from "./pages/WomenMenPage/WMPage"; 
 import { ProductPage } from "./pages/ProductPage/ProductPage";
 import { Footer } from "./components/Footer/Footer";
 import { useGetProductsQuery } from './redux/products/productsApi';
@@ -34,8 +34,8 @@ const App = () => {
         {!isProducts(PRODUCTS) &&
           <Routes>
               <Route path='/' element={<HomePage />} exact />
-              <Route path='/women' element={<WomenMenPage page={"Women"} />} exact />
-              <Route path='/men' element={<WomenMenPage page={"Men"} />} exact />
+              <Route path='/women' element={<WomenMenPag page={"Women"} />} exact />
+              <Route path='/men' element={<WomenMenPag page={"Men"} />} exact />
               <Route path='/men/:id' element={<ProductPage page={"Men"} />} exact />
               <Route path='/women/:id' element={<ProductPage page={"Women"} />} exact />
           </Routes>

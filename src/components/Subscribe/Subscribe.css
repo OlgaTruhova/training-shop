@@ -96,7 +96,21 @@
       align-content: space-between;
 }
 
-.container-subscribe .subscribe-wrapper .subscribe-form .subscribe-form_form input, .container-subscribe .subscribe-wrapper .subscribe-form .subscribe-form_form button {
+.container-subscribe .subscribe-wrapper .subscribe-form .subscribe-form_form .subscribe-error, .container-subscribe .subscribe-wrapper .subscribe-form .subscribe-form_form .subscribe-noerror {
+  display: block;
+  width: 100%;
+  margin: 5px 0;
+  text-align: center;
+  font-family: 'Spartan', sans-serif;
+  font-size: 12px;
+  color: red;
+}
+
+.container-subscribe .subscribe-wrapper .subscribe-form .subscribe-form_form .subscribe-noerror {
+  color: green;
+}
+
+.container-subscribe .subscribe-wrapper .subscribe-form .subscribe-form_form input, .container-subscribe .subscribe-wrapper .subscribe-form .subscribe-form_form .button {
   width: 64%;
   height: 64px;
   background: #121212;
@@ -107,6 +121,25 @@
   text-transform: uppercase;
   opacity: 90%;
   display: block;
+}
+
+.container-subscribe .subscribe-wrapper .subscribe-form .subscribe-form_form .button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container-subscribe .subscribe-wrapper .subscribe-form .subscribe-form_form .active {
+  background: #5e5e5e;
+}
+
+.container-subscribe .subscribe-wrapper .subscribe-form .subscribe-form_form input {
+  color: #000;
 }
 
 @media screen and (max-width: 1220px) {

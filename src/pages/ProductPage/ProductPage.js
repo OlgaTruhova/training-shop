@@ -9,6 +9,7 @@ import { CardProduct } from "../../components/CardProduct/CardProduct";
 import { Slider } from '../../components/Slider/Slider';
 import { Rating } from "../../components/Rating/Rating";
 import { ByInCart } from "../../components/ByInCart/ByInCart";
+import { FormWriteReview } from "../../components/FormWriteReview/FormWriteReview";
 import arrowLeft from '../../assets/png/arrow-left.png';
 import arrowRight from '../../assets/png/arrow-right.png';
 import hanger from "../../assets/img/ProductPage/hanger.png";
@@ -89,6 +90,11 @@ const ProductPage = (page) => {
     useEffect(() => { defaultSelect() }, [colorProductText[0]])
     useEffect(() => { defaultSelect() }, [sizesProduct[0]])
     useEffect(() => { defaultSelect() }, [`https://training.cleverland.by/shop${colorProductImg[0][0]}`])
+
+    const [isWriteReview, setIsWriteReview] = useState(false);
+    const writeReview = (e) => {
+        e.target ? setIsWriteReview(true) : setIsWriteReview(false);
+    }
 
     const orderedProduct =  {idProducta, nameProduct, useColor, useSize, discounProductPrice, counter: 1, imgProduct, 
     price: discounProductPrice};
@@ -196,7 +202,11 @@ const ProductPage = (page) => {
                                         </div>
                                         <span>{reviewsProduct.length} Reviews</span>
                                     </div>
-                                    <div><img src={annotation} alt="stars" /><span>Write a review</span></div>
+                                    <div>
+                                        <img src={annotation} alt="stars" />
+                                        <button onClick={writeReview} className='review-button' data-test-id="review-button">Write a review</button>
+                                    </div>
+                                    {isWriteReview ? <FormWriteReview id={idProducta} reviews={reviewsProduct} /> : null}
                                 </div>
                                 {reviewsProduct.map(reviews => (
                                 <div key={reviews.id}>

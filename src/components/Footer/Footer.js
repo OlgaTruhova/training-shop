@@ -1,4 +1,5 @@
 import React from "react";
+import { SubscribeForm } from "../SubscribeForm/SubscribeForm";
 import { SocialNetworks } from "../SocialNetworks/SocialNetworks";
 import { Link } from "react-router-dom";
 import { CATEGORIES } from "../../data/CATEGORIES";
@@ -10,14 +11,24 @@ import pay from "../../assets/png/pay.png";
 import "./Footer.css";
 
 const Footer = () => {
+
+    const stopDefAction = (e) => {
+        e.preventDefault();
+    }
+
     return (
         <section className="footer" data-test-id="footer">
             <div className="wrapper-footer-contact-form">
                 <div className="footer-contact-form">
                     <span>BE IN TOUCH WITH US:</span>
-                    <form className="contact-form">
-                        <input type="text" placeholder="Enter your email"  />
-                        <button>Join Us</button>
+                    <form className="contact-form" onSubmit={stopDefAction}>
+                        <SubscribeForm  
+                            type='text'
+                            placeholder='Enter your email'
+                            textBtn='Join Us'
+                            test='footer-mail-field'
+                            testBtn='footer-subscribe-mail-button'
+                        />
                     </form>
                     <SocialNetworks />
                 </div>
@@ -65,9 +76,8 @@ const Footer = () => {
                     <a href="#">Clevertec.ru/training</a>
                 </div>
             </div>
-           
         </section>
     )
 }
 
-export {Footer}
+export { Footer }

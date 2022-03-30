@@ -361,6 +361,11 @@
   opacity: 60%;
 }
 
+.page-product .wrapper-product-information .product-information-information .product-information-reviews .reviews-rating .review-button {
+  border: none;
+  background: none;
+}
+
 .page-product .wrapper-product-information .product-information-information .product-information-reviews .reviews-rating2 {
   display: -webkit-box;
   display: -ms-flexbox;
