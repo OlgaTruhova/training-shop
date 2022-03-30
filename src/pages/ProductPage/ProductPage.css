@@ -364,6 +364,7 @@
 .page-product .wrapper-product-information .product-information-information .product-information-reviews .reviews-rating .review-button {
   border: none;
   background: none;
+  cursor: pointer;
 }
 
 .page-product .wrapper-product-information .product-information-information .product-information-reviews .reviews-rating2 {

@@ -56,10 +56,11 @@ const FormWriteReview = (inf) => {
 
    const isDisabledBtn = (count) => {
 
-      if (validName === true && validComment === true && count >= 1) {
+      if (validName === true && validComment === true && count >= 1 || !isLoading) {
          setIsDisabled(false);
       } else {
          setIsDisabled(true);
+         console.log(isDisabled)
       }
    }
 
@@ -93,10 +94,10 @@ const FormWriteReview = (inf) => {
                   <input type="checkbox" id="starFive" name="starFive" className="star"/>
                </label>
             </div>
-            <form className="write-review-form" onSubmit={handlerChange}>
+            <form className="write-review-form" onSubmit={handlerChange} data-test-id="review-submit-button">
                <input type="text" name="name" placeholder="Имя" onChange={onNameChange} className="write-review-name" data-test-id="review-name-field"/>
                <textarea type="input" name="comment" placeholder="Комментарий" onChange={onCommentChange} className="write-review-comment" data-test-id="review-text-field"/>
-               <button type="submit" name="submit" disabled={isDisabled} className={classNames("write-review-btn", {active: isDisabled === false})} data-test-id="review-submit-button">
+               <button type="submit" name="submit" disabled={isDisabled} className={classNames("write-review-btn", {active: isDisabled === false})}>
                   {isLoading && <LoadingSub />}
                   Send
                </button>
